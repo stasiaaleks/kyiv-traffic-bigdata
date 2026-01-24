@@ -6,16 +6,15 @@ requires-python = ">=3.11"
 dependencies = [
     "requests>=2.31.0",
     "python-dotenv>=1.0.0",
+    "gtfs-realtime-bindings>=2.0.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=5.0.0",
+    "selenium>=4.20.0",
+    "websockets>=16.0",
 ]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=8.0.0",
-    "ruff>=0.4.0",
-]
+dev = ["pytest>=8.0.0", "ruff>=0.4.0"]
 
 [tool.uv]
-dev-dependencies = [
-    "pytest>=8.0.0",
-    "ruff>=0.4.0",
-]
+dev-dependencies = ["pytest>=8.0.0", "ruff>=0.4.0"]
