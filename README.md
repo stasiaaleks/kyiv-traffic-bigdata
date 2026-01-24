@@ -1,19 +1,6 @@
-# Kyiv Traffic Data Pipelines
+# Kyiv Traffic Data Ingestion Pipelines
 
-ETL pipelines for ingesting traffic-related data about Kyiv from multiple APIs.
-
-## Structure
-
-```
-├── eway/           # Kyiv public transport API
-│   ├── docs/       # API documentation
-│   ├── pipeline/   # ETL modules (extract, transform, load)
-│   └── data/       # Ingested data storage
-├── weather/        # Weather API
-│   ├── docs/
-│   ├── pipeline/
-│   └── data/
-```
+WIP project: ETL pipelines for ingesting traffic-related data about Kyiv from multiple APIs
 
 ## Setup
 
