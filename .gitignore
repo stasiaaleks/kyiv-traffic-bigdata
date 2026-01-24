@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Environment
+.env
+
+# uv
+.python-version
+uv.lock
+
+# Data files (tracked separately or too large for git)
+*/data/*.json
+*/data/*.csv
+!*/data/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp

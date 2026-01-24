@@ -1,0 +1,4 @@
+# Auto-generated from pyproject.toml for deployment without uv
+# Run: uv pip compile pyproject.toml -o requirements.txt
+requests>=2.31.0
+python-dotenv>=1.0.0
