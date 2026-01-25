@@ -1,9 +1,0 @@
-FROM python:3.11-slim
-
-WORKDIR /app
-
-RUN pip install --no-cache-dir selenium python-dotenv
-
-COPY kpt_scraper.py ws_interceptor.js /app/
-
-CMD ["python", "/app/kpt_scraper.py"]

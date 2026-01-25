@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KPT Vehicle Positions</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: 100vh; width: 100%; }
+        body { margin: 0; padding: 0; }
+        .legend { padding: 10px; background: white; border-radius: 5px; }
+        .legend h4 { margin: 0 0 10px 0; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([$center_lat, $center_lon], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        var positions = $positions_json;
+
+        function getColor(speed) {
+            if (speed < 10) return '#d73027';  // red - slow
+            if (speed < 20) return '#fc8d59';  // orange
+            if (speed < 30) return '#fee08b';  // yellow
+            if (speed < 40) return '#d9ef8b';  // light green
+            return '#1a9850';  // green - fast
+        }
+
+        positions.forEach(function(pos) {
+            var color = getColor(pos.avg_speed);
+            L.circleMarker([pos.lat, pos.lon], {
+                radius: 6,
+                fillColor: color,
+                color: '#000',
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map)
+              .bindPopup('Vehicle: ' + pos.vehicle_id + '<br>Route: ' + pos.route_id + '<br>Speed: ' + pos.avg_speed.toFixed(1) + ' km/h');
+        });
+
+        // Legend
+        var legend = L.control({position: 'bottomright'});
+        legend.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'legend');
+            div.innerHTML = '<h4>Avg Speed</h4>' +
+                '<i style="background:#d73027;width:18px;height:18px;display:inline-block"></i> &lt;10 km/h<br>' +
+                '<i style="background:#fc8d59;width:18px;height:18px;display:inline-block"></i> 10-20 km/h<br>' +
+                '<i style="background:#fee08b;width:18px;height:18px;display:inline-block"></i> 20-30 km/h<br>' +
+                '<i style="background:#d9ef8b;width:18px;height:18px;display:inline-block"></i> 30-40 km/h<br>' +
+                '<i style="background:#1a9850;width:18px;height:18px;display:inline-block"></i> &gt;40 km/h';
+            return div;
+        };
+        legend.addTo(map);
+    </script>
+</body>
+</html>
