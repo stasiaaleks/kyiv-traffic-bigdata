@@ -1,0 +1,1543 @@
+2026-02-07 15:38:22,861 - INFO - poller.poller - KPT Poller (async, REST API + WebSocket)
+2026-02-07 15:38:22,861 - INFO - poller.poller -   api_url: https://online.kpt.kyiv.ua/api/route/list
+2026-02-07 15:38:22,861 - INFO - poller.poller -   kpt_url: https://kpt.kyiv.ua/online
+2026-02-07 15:38:22,862 - INFO - poller.poller -   ws_url: https://online.kpt.kyiv.ua
+2026-02-07 15:38:22,862 - INFO - poller.poller -   poll_interval: 30
+2026-02-07 15:38:22,862 - INFO - poller.poller -   ws_flush_interval: 5
+2026-02-07 15:38:22,862 - INFO - poller.poller -   ws_enabled: True
+2026-02-07 15:38:22,862 - INFO - poller.poller -   output_dir: data
+2026-02-07 15:38:22,862 - INFO - poller.poller -   http_proxy: ***
+2026-02-07 15:38:22,863 - INFO - poller.poller -   socks_proxy: ***
+2026-02-07 15:38:22,863 - INFO - poller.websocket_client - WebSocket client started
+2026-02-07 15:38:22,863 - INFO - poller.poller - Starting routes polling loop...
+2026-02-07 15:38:22,864 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 15:38:24,203 - INFO - poller.websocket_client - Got session ID: C66e4f4CfNhB0LJBJLHH... (ping: 25s)
+2026-02-07 15:38:24,615 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 15:38:24,617 - INFO - poller.writer - Writing to: data/kpt_routes_20260207.jsonl
+2026-02-07 15:38:24,621 - INFO - poller.poller - [Poll #2] Fetched 179 routes
+2026-02-07 15:38:24,863 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 15:38:24,865 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 15:38:25,607 - INFO - poller.websocket_client - WS message #2: 42["locations",["4194305,4194309,50.44569,30.4615,0,0,1669572753","4194308,4194848,50.41296,30.41052
+2026-02-07 15:38:25,865 - INFO - poller.websocket_client - WS message #3: 42["locations",["4194305,4194309,50.44569,30.4615,0,0,1669572753","4194308,4194848,50.41296,30.41052
+2026-02-07 15:38:27,873 - INFO - poller.writer - Writing to: data/kpt_positions_20260207.jsonl
+2026-02-07 15:38:27,888 - INFO - poller.poller - [WS #1] Flushed 2164 positions (total: 2164)
+2026-02-07 15:38:39,809 - INFO - poller.websocket_client - WS message #4: 42["locations",["12584822,12582929,50.42426,30.55963,0,259.2,1770478684","12584818,12582929,50.44308
+2026-02-07 15:38:42,905 - INFO - poller.poller - [WS #2] Flushed 34 positions (total: 2198)
+2026-02-07 15:38:45,268 - INFO - poller.websocket_client - WS message #5: 42["locations",["12585005,12583081,50.41425,30.45509,0,0,1770478655","12584962,12583516,50.44395,30.
+2026-02-07 15:38:47,910 - INFO - poller.poller - [WS #3] Flushed 12 positions (total: 2210)
+2026-02-07 15:38:55,361 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 15:38:55,962 - INFO - poller.poller - [Poll #4] Fetched 179 routes
+2026-02-07 15:39:00,365 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 15:39:00,615 - INFO - poller.websocket_client - Got session ID: MlL4yG21PNjxWk8ZJLHY... (ping: 25s)
+2026-02-07 15:39:01,032 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 15:39:01,296 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 15:39:01,297 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 15:39:02,048 - INFO - poller.websocket_client - WS message #7: 42["locations",["4194305,4194309,50.44569,30.4615,0,0,1669572753","4194308,4194848,50.41296,30.41052
+2026-02-07 15:39:02,215 - INFO - poller.websocket_client - WS message #8: 42["locations",["4194305,4194309,50.44569,30.4615,0,0,1669572753","4194308,4194848,50.41296,30.41052
+2026-02-07 15:39:08,103 - INFO - poller.websocket_client - WS message #9: 42["locations",["8388682,8388651,50.46056,30.44202,0,166.8,1770478707","8388855,8388629,50.46016,30.
+2026-02-07 15:39:12,923 - INFO - poller.poller - [WS #4] Flushed 22 positions (total: 2232)
+2026-02-07 15:39:13,577 - INFO - poller.websocket_client - WS message #10: 42["locations",["12584932,12583039,50.43747,30.41627,0,247.1,1770478697","12584976,12583027,50.39032
+2026-02-07 15:39:17,929 - INFO - poller.poller - [WS #5] Flushed 12 positions (total: 2244)
+2026-02-07 15:39:22,871 - INFO - poller.poller - Stats: polls=4 failed=0 positions=2244 flushes=5 queue=0 dedup=2244 uptime=60.0s
+2026-02-07 15:39:27,494 - INFO - poller.poller - [Poll #6] Fetched 179 routes
+2026-02-07 15:39:31,792 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 15:39:36,798 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 15:39:37,080 - INFO - poller.websocket_client - Got session ID: nnaeS51FwX5hv8bFJLHy... (ping: 25s)
+2026-02-07 15:39:37,541 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 15:39:37,827 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 15:39:37,828 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 15:39:42,954 - INFO - poller.poller - [WS #6] Flushed 2118 positions (total: 4362)
+2026-02-07 15:39:59,658 - INFO - poller.poller - [Poll #8] Fetched 179 routes
+2026-02-07 15:40:07,974 - INFO - poller.poller - [WS #7] Flushed 1 positions (total: 4363)
+2026-02-07 15:40:12,982 - INFO - poller.poller - [WS #8] Flushed 10 positions (total: 4373)
+2026-02-07 15:40:22,872 - INFO - poller.poller - Stats: polls=8 failed=0 positions=4373 flushes=8 queue=1 dedup=2142 uptime=120.0s
+2026-02-07 15:40:22,988 - INFO - poller.poller - [WS #9] Flushed 1 positions (total: 4374)
+2026-02-07 15:40:31,001 - INFO - poller.poller - [Poll #10] Fetched 179 routes
+2026-02-07 15:40:32,998 - INFO - poller.poller - [WS #10] Flushed 14 positions (total: 4388)
+2026-02-07 15:40:35,083 - INFO - poller.poller - Received shutdown signal
+2026-02-07 15:41:22,878 - INFO - poller.poller - Stats: polls=10 failed=0 positions=4388 flushes=10 queue=72 dedup=98 uptime=180.0s
+2026-02-07 15:41:22,879 - INFO - poller.websocket_client - WebSocket closed: 256
+2026-02-07 15:41:23,195 - INFO - poller.websocket_client - WebSocket client stopped (total positions: 4460)
+2026-02-07 15:41:23,198 - INFO - poller.poller - Flushed 72 remaining positions on shutdown
+2026-02-07 15:41:23,200 - INFO - poller.poller - Final: polls=10 failed=0 positions=4388 flushes=10
+2026-02-07 17:40:45,313 - INFO - poller.poller - KPT Poller (async, REST API + WebSocket)
+2026-02-07 17:40:45,313 - INFO - poller.poller -   api_url: https://online.kpt.kyiv.ua/api/route/list
+2026-02-07 17:40:45,314 - INFO - poller.poller -   kpt_url: https://kpt.kyiv.ua/online
+2026-02-07 17:40:45,314 - INFO - poller.poller -   ws_url: https://online.kpt.kyiv.ua
+2026-02-07 17:40:45,314 - INFO - poller.poller -   poll_interval: 30
+2026-02-07 17:40:45,314 - INFO - poller.poller -   ws_flush_interval: 5
+2026-02-07 17:40:45,314 - INFO - poller.poller -   ws_enabled: True
+2026-02-07 17:40:45,314 - INFO - poller.poller -   output_dir: data
+2026-02-07 17:40:45,314 - INFO - poller.poller -   http_proxy: ***
+2026-02-07 17:40:45,315 - INFO - poller.poller -   socks_proxy: ***
+2026-02-07 17:40:45,315 - INFO - poller.websocket_client - WebSocket client started
+2026-02-07 17:40:45,315 - INFO - poller.poller - Starting routes polling loop...
+2026-02-07 17:40:45,316 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:40:46,955 - INFO - poller.writer - Writing to: data/kpt_routes_20260207.jsonl
+2026-02-07 17:40:46,956 - INFO - poller.poller - [Poll #2] Fetched 179 routes
+2026-02-07 17:40:46,974 - INFO - poller.websocket_client - Got session ID: tUoXwq8GLLNMKUnHJL95... (ping: 25s)
+2026-02-07 17:40:47,464 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:40:47,776 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:40:47,776 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:40:48,735 - INFO - poller.websocket_client - WS message #2: 42["locations",["4194305,4194309,50.44569,30.4615,0,0,1669572753","4194308,4194848,50.41296,30.41052
+2026-02-07 17:40:49,000 - INFO - poller.websocket_client - WS message #3: 42["locations",["4194305,4194309,50.44569,30.4615,0,0,1669572753","4194308,4194848,50.41296,30.41052
+2026-02-07 17:40:50,324 - INFO - poller.writer - Writing to: data/kpt_positions_20260207.jsonl
+2026-02-07 17:40:50,339 - INFO - poller.poller - [WS #1] Flushed 2181 positions (total: 2181)
+2026-02-07 17:41:09,834 - INFO - poller.websocket_client - WS message #4: 42["locations",["12585163,12582932,50.42894,30.48164,0,0,1770486014","12585005,12583081,50.43472,30.
+2026-02-07 17:41:10,359 - INFO - poller.poller - [WS #2] Flushed 28 positions (total: 2209)
+2026-02-07 17:41:15,157 - INFO - poller.websocket_client - WS message #5: 42["locations",["12584932,12583039,50.43696,30.49071,0,230.5,1770486054","12584976,12583027,12.03617
+2026-02-07 17:41:20,896 - INFO - poller.poller - [Poll #4] Fetched 179 routes
+2026-02-07 17:41:21,324 - INFO - poller.websocket_client - WS message #7: 42["locations",["12584998,12583520,50.51171,30.42652,0,297.4,1770486043"]]
+2026-02-07 17:41:38,774 - INFO - poller.websocket_client - WS message #8: 42["locations",["12585134,12583365,50.43388,30.41262,0,339.6,1770486046","12584818,12582929,50.44399
+2026-02-07 17:41:40,383 - INFO - poller.poller - [WS #3] Flushed 15 positions (total: 2224)
+2026-02-07 17:41:44,185 - INFO - poller.websocket_client - WS message #9: 42["locations",["12585078,12583078,12.04755,77.04607,0,118.6,1770486032","12585226,12583510,50.49563
+2026-02-07 17:41:45,319 - INFO - poller.poller - Stats: polls=4 failed=0 positions=2224 flushes=3 queue=10 dedup=2234 uptime=60.0s
+2026-02-07 17:41:45,388 - INFO - poller.poller - [WS #4] Flushed 10 positions (total: 2234)
+2026-02-07 17:41:52,670 - INFO - poller.poller - [Poll #6] Fetched 179 routes
+2026-02-07 17:42:10,414 - INFO - poller.poller - [WS #5] Flushed 10 positions (total: 2244)
+2026-02-07 17:42:15,418 - INFO - poller.poller - [WS #6] Flushed 12 positions (total: 2256)
+2026-02-07 17:42:20,425 - INFO - poller.poller - [WS #7] Flushed 2 positions (total: 2258)
+2026-02-07 17:42:24,531 - INFO - poller.poller - [Poll #8] Fetched 179 routes
+2026-02-07 17:42:35,437 - INFO - poller.poller - [WS #8] Flushed 1 positions (total: 2259)
+2026-02-07 17:42:40,442 - INFO - poller.poller - [WS #9] Flushed 16 positions (total: 2275)
+2026-02-07 17:42:45,321 - INFO - poller.poller - Stats: polls=8 failed=0 positions=2275 flushes=9 queue=1 dedup=42 uptime=120.0s
+2026-02-07 17:42:45,446 - INFO - poller.poller - [WS #10] Flushed 1 positions (total: 2276)
+2026-02-07 17:42:56,318 - INFO - poller.poller - [Poll #10] Fetched 179 routes
+2026-02-07 17:43:10,468 - INFO - poller.poller - [WS #11] Flushed 8 positions (total: 2284)
+2026-02-07 17:43:15,474 - INFO - poller.poller - [WS #12] Flushed 3 positions (total: 2287)
+2026-02-07 17:43:20,478 - INFO - poller.poller - [WS #13] Flushed 2 positions (total: 2289)
+2026-02-07 17:43:28,124 - INFO - poller.poller - [Poll #12] Fetched 179 routes
+2026-02-07 17:43:40,495 - INFO - poller.poller - [WS #14] Flushed 2 positions (total: 2291)
+2026-02-07 17:43:45,324 - INFO - poller.poller - Stats: polls=12 failed=0 positions=2291 flushes=14 queue=6 dedup=39 uptime=180.0s
+2026-02-07 17:43:45,499 - INFO - poller.poller - [WS #15] Flushed 6 positions (total: 2297)
+2026-02-07 17:43:50,506 - INFO - poller.poller - [WS #16] Flushed 15 positions (total: 2312)
+2026-02-07 17:44:01,090 - INFO - poller.poller - [Poll #14] Fetched 179 routes
+2026-02-07 17:44:05,517 - INFO - poller.poller - [WS #17] Flushed 3 positions (total: 2315)
+2026-02-07 17:44:10,522 - INFO - poller.poller - [WS #18] Flushed 20 positions (total: 2335)
+2026-02-07 17:44:15,525 - INFO - poller.poller - [WS #19] Flushed 5 positions (total: 2340)
+2026-02-07 17:44:33,370 - INFO - poller.poller - [Poll #16] Fetched 179 routes
+2026-02-07 17:44:35,204 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 17:44:40,210 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:44:40,461 - INFO - poller.websocket_client - Got session ID: jOFjl2q2J17tT3M2JL_C... (ping: 25s)
+2026-02-07 17:44:40,882 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:44:41,582 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:44:41,583 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:44:45,325 - INFO - poller.poller - Stats: polls=16 failed=0 positions=2340 flushes=19 queue=2138 dedup=2181 uptime=240.0s
+2026-02-07 17:44:45,564 - INFO - poller.poller - [WS #20] Flushed 2138 positions (total: 4478)
+2026-02-07 17:44:50,570 - INFO - poller.poller - [WS #21] Flushed 6 positions (total: 4484)
+2026-02-07 17:44:55,574 - INFO - poller.poller - [WS #22] Flushed 1 positions (total: 4485)
+2026-02-07 17:45:00,577 - INFO - poller.poller - [WS #23] Flushed 1 positions (total: 4486)
+2026-02-07 17:45:05,255 - INFO - poller.poller - [Poll #18] Fetched 179 routes
+2026-02-07 17:45:05,580 - INFO - poller.poller - [WS #24] Flushed 5 positions (total: 4491)
+2026-02-07 17:45:15,593 - INFO - poller.poller - [WS #25] Flushed 17 positions (total: 4508)
+2026-02-07 17:45:35,612 - INFO - poller.poller - [WS #26] Flushed 2 positions (total: 4510)
+2026-02-07 17:45:36,895 - INFO - poller.poller - [Poll #20] Fetched 179 routes
+2026-02-07 17:45:40,616 - INFO - poller.poller - [WS #27] Flushed 11 positions (total: 4521)
+2026-02-07 17:45:45,327 - INFO - poller.poller - Stats: polls=20 failed=0 positions=4521 flushes=27 queue=8 dedup=2189 uptime=300.0s
+2026-02-07 17:45:45,620 - INFO - poller.poller - [WS #28] Flushed 8 positions (total: 4529)
+2026-02-07 17:46:08,774 - INFO - poller.poller - [Poll #22] Fetched 179 routes
+2026-02-07 17:46:10,645 - INFO - poller.poller - [WS #29] Flushed 20 positions (total: 4549)
+2026-02-07 17:46:15,650 - INFO - poller.poller - [WS #30] Flushed 12 positions (total: 4561)
+2026-02-07 17:46:20,655 - INFO - poller.poller - [WS #31] Flushed 2 positions (total: 4563)
+2026-02-07 17:46:40,460 - INFO - poller.poller - [Poll #24] Fetched 179 routes
+2026-02-07 17:46:40,667 - INFO - poller.poller - [WS #32] Flushed 9 positions (total: 4572)
+2026-02-07 17:46:45,331 - INFO - poller.poller - Stats: polls=24 failed=0 positions=4572 flushes=32 queue=15 dedup=66 uptime=360.0s
+2026-02-07 17:46:45,670 - INFO - poller.poller - [WS #33] Flushed 15 positions (total: 4587)
+2026-02-07 17:47:10,685 - INFO - poller.poller - [WS #34] Flushed 9 positions (total: 4596)
+2026-02-07 17:47:12,297 - INFO - poller.poller - [Poll #26] Fetched 179 routes
+2026-02-07 17:47:15,689 - INFO - poller.poller - [WS #35] Flushed 16 positions (total: 4612)
+2026-02-07 17:47:25,705 - INFO - poller.poller - [WS #36] Flushed 1 positions (total: 4613)
+2026-02-07 17:47:34,837 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 17:47:39,843 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:47:42,445 - INFO - poller.websocket_client - Got session ID: ZOgNwFQ_i-LNKHu_JMAG... (ping: 25s)
+2026-02-07 17:47:42,875 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:47:43,409 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:47:43,410 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:47:44,875 - INFO - poller.poller - [Poll #28] Fetched 179 routes
+2026-02-07 17:47:45,333 - INFO - poller.poller - Stats: polls=28 failed=0 positions=4613 flushes=36 queue=2157 dedup=2209 uptime=420.0s
+2026-02-07 17:47:45,720 - INFO - poller.poller - [WS #37] Flushed 2161 positions (total: 6774)
+2026-02-07 17:48:05,739 - INFO - poller.poller - [WS #38] Flushed 4 positions (total: 6778)
+2026-02-07 17:48:15,747 - INFO - poller.poller - [WS #39] Flushed 10 positions (total: 6788)
+2026-02-07 17:48:17,178 - INFO - poller.poller - [Poll #30] Fetched 179 routes
+2026-02-07 17:48:20,752 - INFO - poller.poller - [WS #40] Flushed 10 positions (total: 6798)
+2026-02-07 17:48:40,768 - INFO - poller.poller - [WS #41] Flushed 24 positions (total: 6822)
+2026-02-07 17:48:45,334 - INFO - poller.poller - Stats: polls=30 failed=0 positions=6822 flushes=41 queue=2 dedup=2212 uptime=480.0s
+2026-02-07 17:48:45,772 - INFO - poller.poller - [WS #42] Flushed 2 positions (total: 6824)
+2026-02-07 17:48:49,050 - INFO - poller.poller - [Poll #32] Fetched 179 routes
+2026-02-07 17:49:00,789 - INFO - poller.poller - [WS #43] Flushed 1 positions (total: 6825)
+2026-02-07 17:49:10,796 - INFO - poller.poller - [WS #44] Flushed 13 positions (total: 6838)
+2026-02-07 17:49:20,802 - INFO - poller.poller - [WS #45] Flushed 2 positions (total: 6840)
+2026-02-07 17:49:20,953 - INFO - poller.poller - [Poll #34] Fetched 179 routes
+2026-02-07 17:49:25,807 - INFO - poller.poller - [WS #46] Flushed 1 positions (total: 6841)
+2026-02-07 17:49:35,821 - INFO - poller.poller - [WS #47] Flushed 10 positions (total: 6851)
+2026-02-07 17:49:40,830 - INFO - poller.poller - [WS #48] Flushed 6 positions (total: 6857)
+2026-02-07 17:49:45,339 - INFO - poller.poller - Stats: polls=34 failed=0 positions=6857 flushes=48 queue=9 dedup=68 uptime=540.0s
+2026-02-07 17:49:45,834 - INFO - poller.poller - [WS #49] Flushed 9 positions (total: 6866)
+2026-02-07 17:49:53,453 - INFO - poller.poller - [Poll #36] Fetched 179 routes
+2026-02-07 17:49:55,844 - INFO - poller.poller - [WS #50] Flushed 3 positions (total: 6869)
+2026-02-07 17:50:10,854 - INFO - poller.poller - [WS #51] Flushed 26 positions (total: 6895)
+2026-02-07 17:50:15,857 - INFO - poller.poller - [WS #52] Flushed 2 positions (total: 6897)
+2026-02-07 17:50:25,237 - INFO - poller.poller - [Poll #38] Fetched 179 routes
+2026-02-07 17:50:35,221 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 17:50:40,227 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:50:40,488 - INFO - poller.websocket_client - Got session ID: _yJOUi8DDQ73mAyEJMAy... (ping: 25s)
+2026-02-07 17:50:40,884 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:50:41,125 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:50:41,126 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:50:45,342 - INFO - poller.poller - Stats: polls=38 failed=0 positions=6897 flushes=52 queue=2146 dedup=2186 uptime=600.0s
+2026-02-07 17:50:45,881 - INFO - poller.poller - [WS #53] Flushed 2146 positions (total: 9043)
+2026-02-07 17:50:55,888 - INFO - poller.poller - [WS #54] Flushed 8 positions (total: 9051)
+2026-02-07 17:50:56,711 - INFO - poller.poller - [Poll #40] Fetched 179 routes
+2026-02-07 17:51:10,903 - INFO - poller.poller - [WS #55] Flushed 15 positions (total: 9066)
+2026-02-07 17:51:15,909 - INFO - poller.poller - [WS #56] Flushed 18 positions (total: 9084)
+2026-02-07 17:51:29,050 - INFO - poller.poller - [Poll #42] Fetched 179 routes
+2026-02-07 17:51:40,935 - INFO - poller.poller - [WS #57] Flushed 10 positions (total: 9094)
+2026-02-07 17:51:45,344 - INFO - poller.poller - Stats: polls=42 failed=0 positions=9094 flushes=57 queue=28 dedup=2227 uptime=660.0s
+2026-02-07 17:51:45,937 - INFO - poller.poller - [WS #58] Flushed 28 positions (total: 9122)
+2026-02-07 17:52:00,540 - INFO - poller.poller - [Poll #44] Fetched 179 routes
+2026-02-07 17:52:05,951 - INFO - poller.poller - [WS #59] Flushed 7 positions (total: 9129)
+2026-02-07 17:52:15,959 - INFO - poller.poller - [WS #60] Flushed 20 positions (total: 9149)
+2026-02-07 17:52:20,968 - INFO - poller.poller - [WS #61] Flushed 1 positions (total: 9150)
+2026-02-07 17:52:31,894 - INFO - poller.poller - [Poll #46] Fetched 179 routes
+2026-02-07 17:52:36,108 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 17:52:41,109 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:52:41,372 - INFO - poller.websocket_client - Got session ID: cm5VgqvCTqajoZzWJMBd... (ping: 25s)
+2026-02-07 17:52:41,778 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:52:42,013 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:52:42,014 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:52:45,346 - INFO - poller.poller - Stats: polls=46 failed=0 positions=9150 flushes=61 queue=2164 dedup=2192 uptime=720.0s
+2026-02-07 17:52:45,993 - INFO - poller.poller - [WS #62] Flushed 2164 positions (total: 11314)
+2026-02-07 17:53:03,902 - INFO - poller.poller - [Poll #48] Fetched 179 routes
+2026-02-07 17:53:11,017 - INFO - poller.poller - [WS #63] Flushed 15 positions (total: 11329)
+2026-02-07 17:53:16,023 - INFO - poller.poller - [WS #64] Flushed 11 positions (total: 11340)
+2026-02-07 17:53:35,194 - INFO - poller.poller - [Poll #50] Fetched 179 routes
+2026-02-07 17:53:38,891 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 17:53:41,044 - INFO - poller.poller - [WS #65] Flushed 8 positions (total: 11348)
+2026-02-07 17:53:43,894 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:53:44,153 - INFO - poller.websocket_client - Got session ID: w6A5YGkKPITWBhKZJMBx... (ping: 25s)
+2026-02-07 17:53:44,569 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:53:44,811 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:53:44,812 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:53:45,348 - INFO - poller.poller - Stats: polls=50 failed=0 positions=11348 flushes=65 queue=0 dedup=2199 uptime=780.0s
+2026-02-07 17:53:46,052 - INFO - poller.poller - [WS #66] Flushed 2143 positions (total: 13491)
+2026-02-07 17:54:06,353 - INFO - poller.poller - [Poll #52] Fetched 179 routes
+2026-02-07 17:54:11,073 - INFO - poller.poller - [WS #67] Flushed 9 positions (total: 13500)
+2026-02-07 17:54:16,081 - INFO - poller.poller - [WS #68] Flushed 8 positions (total: 13508)
+2026-02-07 17:54:26,093 - INFO - poller.poller - [WS #69] Flushed 1 positions (total: 13509)
+2026-02-07 17:54:37,646 - INFO - poller.poller - [Poll #54] Fetched 179 routes
+2026-02-07 17:54:41,103 - INFO - poller.poller - [WS #70] Flushed 20 positions (total: 13529)
+2026-02-07 17:54:45,355 - INFO - poller.poller - Stats: polls=54 failed=0 positions=13529 flushes=70 queue=0 dedup=2189 uptime=840.0s
+2026-02-07 17:54:51,113 - INFO - poller.poller - [WS #71] Flushed 5 positions (total: 13534)
+2026-02-07 17:55:06,127 - INFO - poller.poller - [WS #72] Flushed 1 positions (total: 13535)
+2026-02-07 17:55:09,503 - INFO - poller.poller - [Poll #56] Fetched 179 routes
+2026-02-07 17:55:11,131 - INFO - poller.poller - [WS #73] Flushed 16 positions (total: 13551)
+2026-02-07 17:55:16,137 - INFO - poller.poller - [WS #74] Flushed 6 positions (total: 13557)
+2026-02-07 17:55:39,814 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 17:55:41,160 - INFO - poller.poller - [WS #75] Flushed 2 positions (total: 13559)
+2026-02-07 17:55:41,209 - INFO - poller.poller - [Poll #58] Fetched 179 routes
+2026-02-07 17:55:44,818 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:55:45,146 - INFO - poller.websocket_client - Got session ID: 7RrMdEgx_Ca6AG-yJMCc... (ping: 25s)
+2026-02-07 17:55:45,356 - INFO - poller.poller - Stats: polls=58 failed=0 positions=13559 flushes=75 queue=0 dedup=50 uptime=900.0s
+2026-02-07 17:55:45,787 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:55:46,143 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:55:46,144 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:55:51,171 - INFO - poller.poller - [WS #76] Flushed 2152 positions (total: 15711)
+2026-02-07 17:56:11,189 - INFO - poller.poller - [WS #77] Flushed 15 positions (total: 15726)
+2026-02-07 17:56:12,756 - INFO - poller.poller - [Poll #60] Fetched 179 routes
+2026-02-07 17:56:16,195 - INFO - poller.poller - [WS #78] Flushed 18 positions (total: 15744)
+2026-02-07 17:56:41,224 - INFO - poller.poller - [WS #79] Flushed 15 positions (total: 15759)
+2026-02-07 17:56:44,436 - INFO - poller.poller - [Poll #62] Fetched 179 routes
+2026-02-07 17:56:45,358 - INFO - poller.poller - Stats: polls=62 failed=0 positions=15759 flushes=79 queue=22 dedup=2230 uptime=960.0s
+2026-02-07 17:56:46,227 - INFO - poller.poller - [WS #80] Flushed 22 positions (total: 15781)
+2026-02-07 17:57:11,253 - INFO - poller.poller - [WS #81] Flushed 16 positions (total: 15797)
+2026-02-07 17:57:14,099 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 17:57:16,062 - INFO - poller.poller - [Poll #64] Fetched 179 routes
+2026-02-07 17:57:19,103 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 17:57:19,429 - INFO - poller.websocket_client - Got session ID: NvpLytY9OIP1kKnfJMC9... (ping: 25s)
+2026-02-07 17:57:19,906 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 17:57:20,197 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 17:57:20,197 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 17:57:21,392 - INFO - poller.poller - [WS #82] Flushed 2127 positions (total: 17924)
+2026-02-07 17:57:41,415 - INFO - poller.poller - [WS #83] Flushed 30 positions (total: 17954)
+2026-02-07 17:57:45,364 - INFO - poller.poller - Stats: polls=64 failed=0 positions=17954 flushes=83 queue=0 dedup=2195 uptime=1020.1s
+2026-02-07 17:57:46,419 - INFO - poller.poller - [WS #84] Flushed 3 positions (total: 17957)
+2026-02-07 17:57:47,855 - INFO - poller.poller - [Poll #66] Fetched 179 routes
+2026-02-07 17:58:11,444 - INFO - poller.poller - [WS #85] Flushed 13 positions (total: 17970)
+2026-02-07 17:58:16,449 - INFO - poller.poller - [WS #86] Flushed 6 positions (total: 17976)
+2026-02-07 17:58:19,504 - INFO - poller.poller - [Poll #68] Fetched 179 routes
+2026-02-07 17:58:41,474 - INFO - poller.poller - [WS #87] Flushed 18 positions (total: 17994)
+2026-02-07 17:58:45,366 - INFO - poller.poller - Stats: polls=68 failed=0 positions=17994 flushes=87 queue=13 dedup=2210 uptime=1080.1s
+2026-02-07 17:58:46,478 - INFO - poller.poller - [WS #88] Flushed 13 positions (total: 18007)
+2026-02-07 17:58:50,991 - INFO - poller.poller - [Poll #70] Fetched 179 routes
+2026-02-07 17:59:11,505 - INFO - poller.poller - [WS #89] Flushed 12 positions (total: 18019)
+2026-02-07 17:59:16,511 - INFO - poller.poller - [WS #90] Flushed 12 positions (total: 18031)
+2026-02-07 17:59:22,807 - INFO - poller.poller - [Poll #72] Fetched 179 routes
+2026-02-07 17:59:26,517 - INFO - poller.poller - [WS #91] Flushed 1 positions (total: 18032)
+2026-02-07 17:59:36,524 - INFO - poller.poller - [WS #92] Flushed 9 positions (total: 18041)
+2026-02-07 17:59:45,371 - INFO - poller.poller - Stats: polls=72 failed=0 positions=18041 flushes=92 queue=2 dedup=49 uptime=1140.1s
+2026-02-07 17:59:46,533 - INFO - poller.poller - [WS #93] Flushed 2 positions (total: 18043)
+2026-02-07 17:59:51,541 - INFO - poller.poller - [WS #94] Flushed 16 positions (total: 18059)
+2026-02-07 17:59:54,131 - INFO - poller.poller - [Poll #74] Fetched 179 routes
+2026-02-07 17:59:56,547 - INFO - poller.poller - [WS #95] Flushed 7 positions (total: 18066)
+2026-02-07 18:00:06,555 - INFO - poller.poller - [WS #96] Flushed 1 positions (total: 18067)
+2026-02-07 18:00:16,567 - INFO - poller.poller - [WS #97] Flushed 39 positions (total: 18106)
+2026-02-07 18:00:21,573 - INFO - poller.poller - [WS #98] Flushed 1 positions (total: 18107)
+2026-02-07 18:00:26,452 - INFO - poller.poller - [Poll #76] Fetched 179 routes
+2026-02-07 18:00:41,592 - INFO - poller.poller - [WS #99] Flushed 32 positions (total: 18139)
+2026-02-07 18:00:45,376 - INFO - poller.poller - Stats: polls=76 failed=0 positions=18139 flushes=99 queue=0 dedup=108 uptime=1200.1s
+2026-02-07 18:00:46,595 - INFO - poller.poller - [WS #100] Flushed 3 positions (total: 18142)
+2026-02-07 18:00:58,121 - INFO - poller.poller - [Poll #78] Fetched 179 routes
+2026-02-07 18:01:01,608 - INFO - poller.poller - [WS #101] Flushed 10 positions (total: 18152)
+2026-02-07 18:01:11,620 - INFO - poller.poller - [WS #102] Flushed 26 positions (total: 18178)
+2026-02-07 18:01:16,625 - INFO - poller.poller - [WS #103] Flushed 11 positions (total: 18189)
+2026-02-07 18:01:29,882 - INFO - poller.poller - [Poll #80] Fetched 179 routes
+2026-02-07 18:01:31,642 - INFO - poller.poller - [WS #104] Flushed 1 positions (total: 18190)
+2026-02-07 18:01:39,554 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:01:44,560 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:01:44,907 - INFO - poller.websocket_client - Got session ID: JINwetfyXvsB6cjcJMEP... (ping: 25s)
+2026-02-07 18:01:45,379 - INFO - poller.poller - Stats: polls=80 failed=0 positions=18190 flushes=104 queue=0 dedup=124 uptime=1260.1s
+2026-02-07 18:01:45,416 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:01:45,714 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:01:45,714 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:01:51,667 - INFO - poller.poller - [WS #105] Flushed 2161 positions (total: 20351)
+2026-02-07 18:02:01,649 - INFO - poller.poller - [Poll #82] Fetched 179 routes
+2026-02-07 18:02:01,675 - INFO - poller.poller - [WS #106] Flushed 12 positions (total: 20363)
+2026-02-07 18:02:06,679 - INFO - poller.poller - [WS #107] Flushed 1 positions (total: 20364)
+2026-02-07 18:02:11,685 - INFO - poller.poller - [WS #108] Flushed 17 positions (total: 20381)
+2026-02-07 18:02:16,382 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:02:21,387 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:02:22,518 - INFO - poller.websocket_client - Got session ID: t4GHjEZp9BL2tFZ-JMEc... (ping: 25s)
+2026-02-07 18:02:22,962 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:02:23,295 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:02:23,295 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:02:26,695 - INFO - poller.poller - [WS #109] Flushed 37 positions (total: 20418)
+2026-02-07 18:02:33,419 - INFO - poller.poller - [Poll #84] Fetched 179 routes
+2026-02-07 18:02:41,706 - INFO - poller.poller - [WS #110] Flushed 8 positions (total: 20426)
+2026-02-07 18:02:45,384 - INFO - poller.poller - Stats: polls=84 failed=0 positions=20426 flushes=110 queue=0 dedup=2237 uptime=1320.1s
+2026-02-07 18:02:51,711 - INFO - poller.poller - [WS #111] Flushed 1 positions (total: 20427)
+2026-02-07 18:03:01,721 - INFO - poller.poller - [WS #112] Flushed 5 positions (total: 20432)
+2026-02-07 18:03:04,694 - INFO - poller.poller - [Poll #86] Fetched 179 routes
+2026-02-07 18:03:11,729 - INFO - poller.poller - [WS #113] Flushed 16 positions (total: 20448)
+2026-02-07 18:03:16,734 - INFO - poller.poller - [WS #114] Flushed 5 positions (total: 20453)
+2026-02-07 18:03:36,749 - INFO - poller.poller - [WS #115] Flushed 1 positions (total: 20454)
+2026-02-07 18:03:37,173 - INFO - poller.poller - [Poll #88] Fetched 179 routes
+2026-02-07 18:03:41,756 - INFO - poller.poller - [WS #116] Flushed 11 positions (total: 20465)
+2026-02-07 18:03:45,387 - INFO - poller.poller - Stats: polls=88 failed=0 positions=20465 flushes=116 queue=13 dedup=60 uptime=1380.1s
+2026-02-07 18:03:46,760 - INFO - poller.poller - [WS #117] Flushed 13 positions (total: 20478)
+2026-02-07 18:03:51,117 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:03:56,122 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:03:57,945 - INFO - poller.websocket_client - Got session ID: z-7h7lRA1RuC9asGJME9... (ping: 25s)
+2026-02-07 18:03:58,406 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:03:58,731 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:03:58,732 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:04:01,781 - INFO - poller.poller - [WS #118] Flushed 2135 positions (total: 22613)
+2026-02-07 18:04:08,388 - INFO - poller.poller - [Poll #90] Fetched 179 routes
+2026-02-07 18:04:11,792 - INFO - poller.poller - [WS #119] Flushed 3 positions (total: 22616)
+2026-02-07 18:04:16,801 - INFO - poller.poller - [WS #120] Flushed 13 positions (total: 22629)
+2026-02-07 18:04:29,403 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:04:34,407 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:04:35,874 - INFO - poller.websocket_client - Got session ID: e2cRbBWya1v5jSbsJMFO... (ping: 25s)
+2026-02-07 18:04:36,254 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:04:36,488 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:04:36,489 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:04:39,971 - INFO - poller.poller - [Poll #92] Fetched 179 routes
+2026-02-07 18:04:41,818 - INFO - poller.poller - [WS #121] Flushed 41 positions (total: 22670)
+2026-02-07 18:04:45,393 - INFO - poller.poller - Stats: polls=92 failed=0 positions=22670 flushes=121 queue=0 dedup=2216 uptime=1440.1s
+2026-02-07 18:05:07,264 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:05:11,561 - INFO - poller.poller - [Poll #94] Fetched 179 routes
+2026-02-07 18:05:12,266 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:05:12,583 - INFO - poller.websocket_client - Got session ID: l6RtS1volbA2NBYgJMFe... (ping: 25s)
+2026-02-07 18:05:13,049 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:05:13,350 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:05:13,350 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:05:16,853 - INFO - poller.poller - [WS #122] Flushed 2150 positions (total: 24820)
+2026-02-07 18:05:26,864 - INFO - poller.poller - [WS #123] Flushed 5 positions (total: 24825)
+2026-02-07 18:05:36,877 - INFO - poller.poller - [WS #124] Flushed 3 positions (total: 24828)
+2026-02-07 18:05:41,882 - INFO - poller.poller - [WS #125] Flushed 13 positions (total: 24841)
+2026-02-07 18:05:43,228 - INFO - poller.poller - [Poll #96] Fetched 179 routes
+2026-02-07 18:05:45,397 - INFO - poller.poller - Stats: polls=96 failed=0 positions=24841 flushes=125 queue=0 dedup=2212 uptime=1500.1s
+2026-02-07 18:05:51,891 - INFO - poller.poller - [WS #126] Flushed 9 positions (total: 24850)
+2026-02-07 18:06:01,900 - INFO - poller.poller - [WS #127] Flushed 2 positions (total: 24852)
+2026-02-07 18:06:11,914 - INFO - poller.poller - [WS #128] Flushed 12 positions (total: 24864)
+2026-02-07 18:06:15,144 - INFO - poller.poller - [Poll #98] Fetched 179 routes
+2026-02-07 18:06:16,919 - INFO - poller.poller - [WS #129] Flushed 16 positions (total: 24880)
+2026-02-07 18:06:21,926 - INFO - poller.poller - [WS #130] Flushed 2 positions (total: 24882)
+2026-02-07 18:06:36,939 - INFO - poller.poller - [WS #131] Flushed 1 positions (total: 24883)
+2026-02-07 18:06:41,944 - INFO - poller.poller - [WS #132] Flushed 12 positions (total: 24895)
+2026-02-07 18:06:45,399 - INFO - poller.poller - Stats: polls=99 failed=0 positions=24895 flushes=132 queue=0 dedup=67 uptime=1560.1s
+2026-02-07 18:06:46,453 - INFO - poller.poller - [Poll #100] Fetched 179 routes
+2026-02-07 18:06:56,958 - INFO - poller.poller - [WS #133] Flushed 11 positions (total: 24906)
+2026-02-07 18:07:05,631 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:07:10,636 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:07:12,033 - INFO - poller.websocket_client - Got session ID: jEjwmtckI2t54LLXJMGC... (ping: 25s)
+2026-02-07 18:07:12,464 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:07:12,710 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:07:12,711 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:07:16,983 - INFO - poller.poller - [WS #134] Flushed 2163 positions (total: 27069)
+2026-02-07 18:07:18,963 - INFO - poller.poller - [Poll #102] Fetched 179 routes
+2026-02-07 18:07:21,988 - INFO - poller.poller - [WS #135] Flushed 1 positions (total: 27070)
+2026-02-07 18:07:26,991 - INFO - poller.poller - [WS #136] Flushed 1 positions (total: 27071)
+2026-02-07 18:07:42,005 - INFO - poller.poller - [WS #137] Flushed 20 positions (total: 27091)
+2026-02-07 18:07:45,402 - INFO - poller.poller - Stats: polls=102 failed=0 positions=27091 flushes=137 queue=0 dedup=2211 uptime=1620.1s
+2026-02-07 18:07:50,333 - INFO - poller.poller - [Poll #104] Fetched 179 routes
+2026-02-07 18:07:52,012 - INFO - poller.poller - [WS #138] Flushed 3 positions (total: 27094)
+2026-02-07 18:08:12,030 - INFO - poller.poller - [WS #139] Flushed 10 positions (total: 27104)
+2026-02-07 18:08:17,036 - INFO - poller.poller - [WS #140] Flushed 13 positions (total: 27117)
+2026-02-07 18:08:22,079 - INFO - poller.poller - [Poll #106] Fetched 179 routes
+2026-02-07 18:08:38,099 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:08:43,101 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:08:44,948 - INFO - poller.websocket_client - Got session ID: zFS69_VnBEncMJmKJMGk... (ping: 25s)
+2026-02-07 18:08:45,403 - INFO - poller.poller - Stats: polls=106 failed=0 positions=27117 flushes=140 queue=0 dedup=2222 uptime=1680.1s
+2026-02-07 18:08:45,432 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:08:45,740 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:08:45,740 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:08:47,130 - INFO - poller.poller - [WS #141] Flushed 2161 positions (total: 29278)
+2026-02-07 18:08:54,630 - INFO - poller.poller - [Poll #108] Fetched 179 routes
+2026-02-07 18:09:12,146 - INFO - poller.poller - [WS #142] Flushed 23 positions (total: 29301)
+2026-02-07 18:09:22,155 - INFO - poller.poller - [WS #143] Flushed 3 positions (total: 29304)
+2026-02-07 18:09:26,567 - INFO - poller.poller - [Poll #110] Fetched 179 routes
+2026-02-07 18:09:42,171 - INFO - poller.poller - [WS #144] Flushed 10 positions (total: 29314)
+2026-02-07 18:09:45,405 - INFO - poller.poller - Stats: polls=110 failed=0 positions=29314 flushes=144 queue=11 dedup=2208 uptime=1740.1s
+2026-02-07 18:09:47,175 - INFO - poller.poller - [WS #145] Flushed 11 positions (total: 29325)
+2026-02-07 18:09:52,178 - INFO - poller.poller - [WS #146] Flushed 1 positions (total: 29326)
+2026-02-07 18:09:58,312 - INFO - poller.poller - [Poll #112] Fetched 179 routes
+2026-02-07 18:10:08,552 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:10:13,554 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:10:15,440 - INFO - poller.websocket_client - Got session ID: 6ENiW0R3WN-PrhpUJMHB... (ping: 25s)
+2026-02-07 18:10:15,969 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:10:16,349 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:10:16,349 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:10:22,209 - INFO - poller.poller - [WS #147] Flushed 2146 positions (total: 31472)
+2026-02-07 18:10:30,040 - INFO - poller.poller - [Poll #114] Fetched 179 routes
+2026-02-07 18:10:42,231 - INFO - poller.poller - [WS #148] Flushed 10 positions (total: 31482)
+2026-02-07 18:10:45,407 - INFO - poller.poller - Stats: polls=114 failed=0 positions=31482 flushes=148 queue=14 dedup=2192 uptime=1800.1s
+2026-02-07 18:10:47,234 - INFO - poller.poller - [WS #149] Flushed 14 positions (total: 31496)
+2026-02-07 18:11:01,937 - INFO - poller.poller - [Poll #116] Fetched 179 routes
+2026-02-07 18:11:12,257 - INFO - poller.poller - [WS #150] Flushed 7 positions (total: 31503)
+2026-02-07 18:11:14,494 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:11:19,497 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:11:20,612 - INFO - poller.websocket_client - Got session ID: pwA0z2ckMRo7IoadJMHY... (ping: 25s)
+2026-02-07 18:11:21,022 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:11:21,242 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:11:21,243 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:11:22,263 - INFO - poller.poller - [WS #151] Flushed 21 positions (total: 31524)
+2026-02-07 18:11:33,214 - INFO - poller.poller - [Poll #118] Fetched 179 routes
+2026-02-07 18:11:42,277 - INFO - poller.poller - [WS #152] Flushed 24 positions (total: 31548)
+2026-02-07 18:11:45,411 - INFO - poller.poller - Stats: polls=118 failed=0 positions=31548 flushes=152 queue=0 dedup=66 uptime=1860.1s
+2026-02-07 18:11:52,283 - INFO - poller.poller - [WS #153] Flushed 2 positions (total: 31550)
+2026-02-07 18:12:05,036 - INFO - poller.poller - [Poll #120] Fetched 179 routes
+2026-02-07 18:12:12,305 - INFO - poller.poller - [WS #154] Flushed 9 positions (total: 31559)
+2026-02-07 18:12:17,311 - INFO - poller.poller - [WS #155] Flushed 18 positions (total: 31577)
+2026-02-07 18:12:22,315 - INFO - poller.poller - [WS #156] Flushed 4 positions (total: 31581)
+2026-02-07 18:12:37,215 - INFO - poller.poller - [Poll #122] Fetched 179 routes
+2026-02-07 18:12:42,328 - INFO - poller.poller - [WS #157] Flushed 5 positions (total: 31586)
+2026-02-07 18:12:45,415 - INFO - poller.poller - Stats: polls=122 failed=0 positions=31586 flushes=157 queue=0 dedup=83 uptime=1920.1s
+2026-02-07 18:12:47,332 - INFO - poller.poller - [WS #158] Flushed 5 positions (total: 31591)
+2026-02-07 18:13:07,348 - INFO - poller.poller - [WS #159] Flushed 1 positions (total: 31592)
+2026-02-07 18:13:08,717 - INFO - poller.poller - [Poll #124] Fetched 179 routes
+2026-02-07 18:13:17,362 - INFO - poller.poller - [WS #160] Flushed 17 positions (total: 31609)
+2026-02-07 18:13:36,974 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:13:41,425 - INFO - poller.poller - [Poll #126] Fetched 179 routes
+2026-02-07 18:13:41,976 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:13:42,315 - INFO - poller.websocket_client - Got session ID: qSjKuMv_5T8_ngbNJMII... (ping: 25s)
+2026-02-07 18:13:42,776 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:13:43,064 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:13:43,064 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:13:45,416 - INFO - poller.poller - Stats: polls=126 failed=0 positions=31609 flushes=160 queue=2150 dedup=2173 uptime=1980.1s
+2026-02-07 18:13:47,390 - INFO - poller.poller - [WS #161] Flushed 2150 positions (total: 33759)
+2026-02-07 18:14:12,412 - INFO - poller.poller - [WS #162] Flushed 13 positions (total: 33772)
+2026-02-07 18:14:13,167 - INFO - poller.poller - [Poll #128] Fetched 179 routes
+2026-02-07 18:14:17,417 - INFO - poller.poller - [WS #163] Flushed 10 positions (total: 33782)
+2026-02-07 18:14:37,434 - INFO - poller.poller - [WS #164] Flushed 2 positions (total: 33784)
+2026-02-07 18:14:44,335 - INFO - poller.poller - [Poll #130] Fetched 179 routes
+2026-02-07 18:14:45,418 - INFO - poller.poller - Stats: polls=130 failed=0 positions=33784 flushes=164 queue=19 dedup=2194 uptime=2040.1s
+2026-02-07 18:14:47,445 - INFO - poller.poller - [WS #165] Flushed 19 positions (total: 33803)
+2026-02-07 18:14:52,452 - INFO - poller.poller - [WS #166] Flushed 4 positions (total: 33807)
+2026-02-07 18:15:06,077 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:15:11,082 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:15:12,553 - INFO - poller.websocket_client - Got session ID: yOque4EUoh_gIP1tJMIx... (ping: 25s)
+2026-02-07 18:15:12,989 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:15:13,281 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:15:13,282 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:15:15,971 - INFO - poller.poller - [Poll #132] Fetched 179 routes
+2026-02-07 18:15:17,476 - INFO - poller.poller - [WS #167] Flushed 2147 positions (total: 35954)
+2026-02-07 18:15:37,496 - INFO - poller.poller - [WS #168] Flushed 2 positions (total: 35956)
+2026-02-07 18:15:42,500 - INFO - poller.poller - [WS #169] Flushed 17 positions (total: 35973)
+2026-02-07 18:15:45,422 - INFO - poller.poller - Stats: polls=132 failed=0 positions=35973 flushes=169 queue=0 dedup=2189 uptime=2100.1s
+2026-02-07 18:15:47,782 - INFO - poller.poller - [Poll #134] Fetched 179 routes
+2026-02-07 18:15:52,508 - INFO - poller.poller - [WS #170] Flushed 4 positions (total: 35977)
+2026-02-07 18:16:13,003 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:16:18,004 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:16:18,981 - INFO - poller.poller - [Poll #136] Fetched 179 routes
+2026-02-07 18:16:20,907 - INFO - poller.websocket_client - Got session ID: FXOYb0aGEoatZPFWJMJM... (ping: 25s)
+2026-02-07 18:16:21,304 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:16:21,535 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:16:21,536 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:16:22,567 - INFO - poller.poller - [WS #171] Flushed 2151 positions (total: 38128)
+2026-02-07 18:16:42,589 - INFO - poller.poller - [WS #172] Flushed 10 positions (total: 38138)
+2026-02-07 18:16:45,426 - INFO - poller.poller - Stats: polls=136 failed=0 positions=38138 flushes=172 queue=0 dedup=2184 uptime=2160.1s
+2026-02-07 18:16:47,592 - INFO - poller.poller - [WS #173] Flushed 3 positions (total: 38141)
+2026-02-07 18:16:50,324 - INFO - poller.poller - [Poll #138] Fetched 179 routes
+2026-02-07 18:17:02,606 - INFO - poller.poller - [WS #174] Flushed 4 positions (total: 38145)
+2026-02-07 18:17:07,608 - INFO - poller.poller - [WS #175] Flushed 7 positions (total: 38152)
+2026-02-07 18:17:17,619 - INFO - poller.poller - [WS #176] Flushed 16 positions (total: 38168)
+2026-02-07 18:17:21,930 - INFO - poller.poller - [Poll #140] Fetched 179 routes
+2026-02-07 18:17:42,639 - INFO - poller.poller - [WS #177] Flushed 6 positions (total: 38174)
+2026-02-07 18:17:45,430 - INFO - poller.poller - Stats: polls=140 failed=0 positions=38174 flushes=177 queue=0 dedup=36 uptime=2220.1s
+2026-02-07 18:17:52,645 - INFO - poller.poller - [WS #178] Flushed 5 positions (total: 38179)
+2026-02-07 18:17:53,609 - INFO - poller.poller - [Poll #142] Fetched 179 routes
+2026-02-07 18:17:57,651 - INFO - poller.poller - [WS #179] Flushed 4 positions (total: 38183)
+2026-02-07 18:18:12,668 - INFO - poller.poller - [WS #180] Flushed 7 positions (total: 38190)
+2026-02-07 18:18:17,672 - INFO - poller.poller - [WS #181] Flushed 1 positions (total: 38191)
+2026-02-07 18:18:25,272 - INFO - poller.poller - [Poll #144] Fetched 179 routes
+2026-02-07 18:18:27,685 - INFO - poller.poller - [WS #182] Flushed 13 positions (total: 38204)
+2026-02-07 18:18:32,691 - INFO - poller.poller - [WS #183] Flushed 3 positions (total: 38207)
+2026-02-07 18:18:45,434 - INFO - poller.poller - Stats: polls=144 failed=0 positions=38207 flushes=183 queue=0 dedup=39 uptime=2280.1s
+2026-02-07 18:18:47,704 - INFO - poller.poller - [WS #184] Flushed 7 positions (total: 38214)
+2026-02-07 18:18:57,147 - INFO - poller.poller - [Poll #146] Fetched 179 routes
+2026-02-07 18:18:57,713 - INFO - poller.poller - [WS #185] Flushed 4 positions (total: 38218)
+2026-02-07 18:19:12,727 - INFO - poller.poller - [WS #186] Flushed 10 positions (total: 38228)
+2026-02-07 18:19:17,734 - INFO - poller.poller - [WS #187] Flushed 1 positions (total: 38229)
+2026-02-07 18:19:28,984 - INFO - poller.poller - [Poll #148] Fetched 179 routes
+2026-02-07 18:19:42,759 - INFO - poller.poller - [WS #188] Flushed 20 positions (total: 38249)
+2026-02-07 18:19:45,436 - INFO - poller.poller - Stats: polls=148 failed=0 positions=38249 flushes=188 queue=0 dedup=42 uptime=2340.1s
+2026-02-07 18:19:47,766 - INFO - poller.poller - [WS #189] Flushed 12 positions (total: 38261)
+2026-02-07 18:20:01,281 - INFO - poller.poller - [Poll #150] Fetched 179 routes
+2026-02-07 18:20:08,804 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:20:13,808 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:20:14,087 - INFO - poller.websocket_client - Got session ID: Fu-3drCtwtiqsKIhJMKC... (ping: 25s)
+2026-02-07 18:20:14,509 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:20:14,785 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:20:14,786 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:20:17,793 - INFO - poller.poller - [WS #190] Flushed 2136 positions (total: 40397)
+2026-02-07 18:20:22,801 - INFO - poller.poller - [WS #191] Flushed 12 positions (total: 40409)
+2026-02-07 18:20:32,444 - INFO - poller.poller - [Poll #152] Fetched 179 routes
+2026-02-07 18:20:32,811 - INFO - poller.poller - [WS #192] Flushed 7 positions (total: 40416)
+2026-02-07 18:20:42,822 - INFO - poller.poller - [WS #193] Flushed 14 positions (total: 40430)
+2026-02-07 18:20:45,441 - INFO - poller.poller - Stats: polls=152 failed=0 positions=40430 flushes=193 queue=0 dedup=2201 uptime=2400.1s
+2026-02-07 18:20:52,830 - INFO - poller.poller - [WS #194] Flushed 1 positions (total: 40431)
+2026-02-07 18:20:57,835 - INFO - poller.poller - [WS #195] Flushed 4 positions (total: 40435)
+2026-02-07 18:21:04,069 - INFO - poller.poller - [Poll #154] Fetched 179 routes
+2026-02-07 18:21:07,843 - INFO - poller.poller - [WS #196] Flushed 3 positions (total: 40438)
+2026-02-07 18:21:11,533 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:21:16,539 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:21:16,859 - INFO - poller.websocket_client - Got session ID: D3cJ4neDBKF7EFr0JMKd... (ping: 25s)
+2026-02-07 18:21:17,333 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:21:17,630 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:21:17,630 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:21:22,852 - INFO - poller.poller - [WS #197] Flushed 4 positions (total: 40442)
+2026-02-07 18:21:27,860 - INFO - poller.poller - [WS #198] Flushed 9 positions (total: 40451)
+2026-02-07 18:21:35,434 - INFO - poller.poller - [Poll #156] Fetched 179 routes
+2026-02-07 18:21:37,872 - INFO - poller.poller - [WS #199] Flushed 17 positions (total: 40468)
+2026-02-07 18:21:42,877 - INFO - poller.poller - [WS #200] Flushed 6 positions (total: 40474)
+2026-02-07 18:21:45,445 - INFO - poller.poller - Stats: polls=156 failed=0 positions=40474 flushes=200 queue=0 dedup=65 uptime=2460.1s
+2026-02-07 18:21:47,881 - INFO - poller.poller - [WS #201] Flushed 12 positions (total: 40486)
+2026-02-07 18:21:48,253 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:21:53,255 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:21:56,118 - INFO - poller.websocket_client - Got session ID: s-IyzYc0Gb5h227XJMK1... (ping: 25s)
+2026-02-07 18:21:56,682 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:21:57,077 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:21:57,077 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:22:02,894 - INFO - poller.poller - [WS #202] Flushed 2132 positions (total: 42618)
+2026-02-07 18:22:07,191 - INFO - poller.poller - [Poll #158] Fetched 179 routes
+2026-02-07 18:22:12,903 - INFO - poller.poller - [WS #203] Flushed 10 positions (total: 42628)
+2026-02-07 18:22:17,908 - INFO - poller.poller - [WS #204] Flushed 2 positions (total: 42630)
+2026-02-07 18:22:22,911 - INFO - poller.poller - [WS #205] Flushed 8 positions (total: 42638)
+2026-02-07 18:22:32,920 - INFO - poller.poller - [WS #206] Flushed 6 positions (total: 42644)
+2026-02-07 18:22:37,924 - INFO - poller.poller - [WS #207] Flushed 2 positions (total: 42646)
+2026-02-07 18:22:38,749 - INFO - poller.poller - [Poll #160] Fetched 179 routes
+2026-02-07 18:22:42,928 - INFO - poller.poller - [WS #208] Flushed 12 positions (total: 42658)
+2026-02-07 18:22:45,449 - INFO - poller.poller - Stats: polls=160 failed=0 positions=42658 flushes=208 queue=0 dedup=2190 uptime=2520.1s
+2026-02-07 18:22:52,938 - INFO - poller.poller - [WS #209] Flushed 7 positions (total: 42665)
+2026-02-07 18:22:57,945 - INFO - poller.poller - [WS #210] Flushed 3 positions (total: 42668)
+2026-02-07 18:23:07,955 - INFO - poller.poller - [WS #211] Flushed 6 positions (total: 42674)
+2026-02-07 18:23:10,233 - INFO - poller.poller - [Poll #162] Fetched 179 routes
+2026-02-07 18:23:17,967 - INFO - poller.poller - [WS #212] Flushed 8 positions (total: 42682)
+2026-02-07 18:23:19,720 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:23:24,723 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:23:24,999 - INFO - poller.websocket_client - Got session ID: FQmy30PbX3yssaCNJMLT... (ping: 25s)
+2026-02-07 18:23:25,490 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:23:25,728 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:23:25,728 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:23:27,980 - INFO - poller.poller - [WS #213] Flushed 2125 positions (total: 44807)
+2026-02-07 18:23:37,994 - INFO - poller.poller - [WS #214] Flushed 7 positions (total: 44814)
+2026-02-07 18:23:42,175 - INFO - poller.poller - [Poll #164] Fetched 179 routes
+2026-02-07 18:23:43,000 - INFO - poller.poller - [WS #215] Flushed 27 positions (total: 44841)
+2026-02-07 18:23:45,453 - INFO - poller.poller - Stats: polls=164 failed=0 positions=44841 flushes=215 queue=0 dedup=2195 uptime=2580.1s
+2026-02-07 18:23:48,005 - INFO - poller.poller - [WS #216] Flushed 5 positions (total: 44846)
+2026-02-07 18:24:08,017 - INFO - poller.poller - [WS #217] Flushed 4 positions (total: 44850)
+2026-02-07 18:24:13,022 - INFO - poller.poller - [WS #218] Flushed 18 positions (total: 44868)
+2026-02-07 18:24:13,766 - INFO - poller.poller - [Poll #166] Fetched 179 routes
+2026-02-07 18:24:18,028 - INFO - poller.poller - [WS #219] Flushed 2 positions (total: 44870)
+2026-02-07 18:24:23,032 - INFO - poller.poller - [WS #220] Flushed 8 positions (total: 44878)
+2026-02-07 18:24:28,035 - INFO - poller.poller - [WS #221] Flushed 4 positions (total: 44882)
+2026-02-07 18:24:43,051 - INFO - poller.poller - [WS #222] Flushed 18 positions (total: 44900)
+2026-02-07 18:24:45,455 - INFO - poller.poller - Stats: polls=167 failed=0 positions=44900 flushes=222 queue=6 dedup=65 uptime=2640.1s
+2026-02-07 18:24:45,575 - INFO - poller.poller - [Poll #168] Fetched 179 routes
+2026-02-07 18:24:48,056 - INFO - poller.poller - [WS #223] Flushed 6 positions (total: 44906)
+2026-02-07 18:24:52,962 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:24:57,968 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:24:58,220 - INFO - poller.websocket_client - Got session ID: lYDTaZ97WGHt-07yJML5... (ping: 25s)
+2026-02-07 18:24:58,678 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:24:59,203 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:24:59,203 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:25:03,065 - INFO - poller.poller - [WS #224] Flushed 2127 positions (total: 47033)
+2026-02-07 18:25:13,077 - INFO - poller.poller - [WS #225] Flushed 16 positions (total: 47049)
+2026-02-07 18:25:17,166 - INFO - poller.poller - [Poll #170] Fetched 179 routes
+2026-02-07 18:25:18,080 - INFO - poller.poller - [WS #226] Flushed 8 positions (total: 47057)
+2026-02-07 18:25:29,738 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:25:34,741 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:25:36,297 - INFO - poller.websocket_client - Got session ID: QWz1v_6GREb-AlebJMMH... (ping: 25s)
+2026-02-07 18:25:36,725 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:25:36,992 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:25:36,993 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:25:38,094 - INFO - poller.poller - [WS #227] Flushed 5 positions (total: 47062)
+2026-02-07 18:25:43,101 - INFO - poller.poller - [WS #228] Flushed 15 positions (total: 47077)
+2026-02-07 18:25:45,458 - INFO - poller.poller - Stats: polls=170 failed=0 positions=47077 flushes=228 queue=4 dedup=2199 uptime=2700.1s
+2026-02-07 18:25:48,103 - INFO - poller.poller - [WS #229] Flushed 4 positions (total: 47081)
+2026-02-07 18:25:48,637 - INFO - poller.poller - [Poll #172] Fetched 179 routes
+2026-02-07 18:25:58,111 - INFO - poller.poller - [WS #230] Flushed 3 positions (total: 47084)
+2026-02-07 18:26:08,119 - INFO - poller.poller - [WS #231] Flushed 8 positions (total: 47092)
+2026-02-07 18:26:13,123 - INFO - poller.poller - [WS #232] Flushed 26 positions (total: 47118)
+2026-02-07 18:26:20,541 - INFO - poller.poller - [Poll #174] Fetched 179 routes
+2026-02-07 18:26:23,133 - INFO - poller.poller - [WS #233] Flushed 1 positions (total: 47119)
+2026-02-07 18:26:36,561 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:26:41,566 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:26:43,812 - INFO - poller.websocket_client - Got session ID: DrOzKsvTClWJsbCKJMMa... (ping: 25s)
+2026-02-07 18:26:44,189 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:26:44,415 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:26:44,415 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:26:45,460 - INFO - poller.poller - Stats: polls=174 failed=0 positions=47119 flushes=233 queue=2154 dedup=2192 uptime=2760.1s
+2026-02-07 18:26:48,161 - INFO - poller.poller - [WS #234] Flushed 2154 positions (total: 49273)
+2026-02-07 18:26:52,397 - INFO - poller.poller - [Poll #176] Fetched 179 routes
+2026-02-07 18:27:08,178 - INFO - poller.poller - [WS #235] Flushed 8 positions (total: 49281)
+2026-02-07 18:27:13,181 - INFO - poller.poller - [WS #236] Flushed 23 positions (total: 49304)
+2026-02-07 18:27:25,026 - INFO - poller.poller - [Poll #178] Fetched 179 routes
+2026-02-07 18:27:28,189 - INFO - poller.poller - [WS #237] Flushed 1 positions (total: 49305)
+2026-02-07 18:27:38,201 - INFO - poller.poller - [WS #238] Flushed 3 positions (total: 49308)
+2026-02-07 18:27:43,205 - INFO - poller.poller - [WS #239] Flushed 22 positions (total: 49330)
+2026-02-07 18:27:45,463 - INFO - poller.poller - Stats: polls=178 failed=0 positions=49330 flushes=239 queue=0 dedup=2211 uptime=2820.1s
+2026-02-07 18:27:48,209 - INFO - poller.poller - [WS #240] Flushed 4 positions (total: 49334)
+2026-02-07 18:27:56,339 - INFO - poller.poller - [Poll #180] Fetched 179 routes
+2026-02-07 18:28:13,232 - INFO - poller.poller - [WS #241] Flushed 11 positions (total: 49345)
+2026-02-07 18:28:28,002 - INFO - poller.poller - [Poll #182] Fetched 179 routes
+2026-02-07 18:28:28,247 - INFO - poller.poller - [WS #242] Flushed 3 positions (total: 49348)
+2026-02-07 18:28:38,255 - INFO - poller.poller - [WS #243] Flushed 27 positions (total: 49375)
+2026-02-07 18:28:45,466 - INFO - poller.poller - Stats: polls=182 failed=0 positions=49375 flushes=243 queue=9 dedup=54 uptime=2880.2s
+2026-02-07 18:28:48,267 - INFO - poller.poller - [WS #244] Flushed 9 positions (total: 49384)
+2026-02-07 18:28:59,921 - INFO - poller.poller - [Poll #184] Fetched 179 routes
+2026-02-07 18:29:08,607 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:29:13,608 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:29:13,918 - INFO - poller.websocket_client - Got session ID: FupBz32VKB511Eh3JMNQ... (ping: 25s)
+2026-02-07 18:29:14,405 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:29:14,742 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:29:14,742 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:29:18,300 - INFO - poller.poller - [WS #245] Flushed 2140 positions (total: 51524)
+2026-02-07 18:29:23,307 - INFO - poller.poller - [WS #246] Flushed 16 positions (total: 51540)
+2026-02-07 18:29:31,468 - INFO - poller.poller - [Poll #186] Fetched 179 routes
+2026-02-07 18:29:43,326 - INFO - poller.poller - [WS #247] Flushed 16 positions (total: 51556)
+2026-02-07 18:29:45,468 - INFO - poller.poller - Stats: polls=186 failed=0 positions=51556 flushes=247 queue=11 dedup=2222 uptime=2940.2s
+2026-02-07 18:29:48,331 - INFO - poller.poller - [WS #248] Flushed 11 positions (total: 51567)
+2026-02-07 18:30:04,138 - INFO - poller.poller - [Poll #188] Fetched 179 routes
+2026-02-07 18:30:08,346 - INFO - poller.poller - [WS #249] Flushed 5 positions (total: 51572)
+2026-02-07 18:30:13,351 - INFO - poller.poller - [WS #250] Flushed 19 positions (total: 51591)
+2026-02-07 18:30:33,373 - INFO - poller.poller - [WS #251] Flushed 3 positions (total: 51594)
+2026-02-07 18:30:35,382 - INFO - poller.poller - [Poll #190] Fetched 179 routes
+2026-02-07 18:30:43,387 - INFO - poller.poller - [WS #252] Flushed 21 positions (total: 51615)
+2026-02-07 18:30:45,471 - INFO - poller.poller - Stats: polls=190 failed=0 positions=51615 flushes=252 queue=0 dedup=59 uptime=3000.2s
+2026-02-07 18:30:48,392 - INFO - poller.poller - [WS #253] Flushed 6 positions (total: 51621)
+2026-02-07 18:31:06,943 - INFO - poller.poller - [Poll #192] Fetched 179 routes
+2026-02-07 18:31:13,415 - INFO - poller.poller - [WS #254] Flushed 17 positions (total: 51638)
+2026-02-07 18:31:18,421 - INFO - poller.poller - [WS #255] Flushed 11 positions (total: 51649)
+2026-02-07 18:31:38,384 - INFO - poller.poller - [Poll #194] Fetched 179 routes
+2026-02-07 18:31:39,940 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:31:44,942 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:31:45,195 - INFO - poller.websocket_client - Got session ID: Lc6mR1P3FpXjgKRRJMOF... (ping: 25s)
+2026-02-07 18:31:45,473 - INFO - poller.poller - Stats: polls=194 failed=0 positions=51649 flushes=255 queue=0 dedup=58 uptime=3060.2s
+2026-02-07 18:31:45,595 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:31:46,236 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:31:46,236 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:31:48,453 - INFO - poller.poller - [WS #256] Flushed 2149 positions (total: 53798)
+2026-02-07 18:32:08,473 - INFO - poller.poller - [WS #257] Flushed 5 positions (total: 53803)
+2026-02-07 18:32:09,709 - INFO - poller.poller - [Poll #196] Fetched 179 routes
+2026-02-07 18:32:13,477 - INFO - poller.poller - [WS #258] Flushed 24 positions (total: 53827)
+2026-02-07 18:32:38,505 - INFO - poller.poller - [WS #259] Flushed 11 positions (total: 53838)
+2026-02-07 18:32:41,446 - INFO - poller.poller - [Poll #198] Fetched 179 routes
+2026-02-07 18:32:43,512 - INFO - poller.poller - [WS #260] Flushed 10 positions (total: 53848)
+2026-02-07 18:32:45,477 - INFO - poller.poller - Stats: polls=198 failed=0 positions=53848 flushes=260 queue=0 dedup=2199 uptime=3120.2s
+2026-02-07 18:33:03,531 - INFO - poller.poller - [WS #261] Flushed 5 positions (total: 53853)
+2026-02-07 18:33:08,538 - INFO - poller.poller - [WS #262] Flushed 2 positions (total: 53855)
+2026-02-07 18:33:11,914 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:33:13,306 - INFO - poller.poller - [Poll #200] Fetched 179 routes
+2026-02-07 18:33:16,919 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:33:17,364 - INFO - poller.websocket_client - Got session ID: eVzwRvy-APMby_XTJMOg... (ping: 25s)
+2026-02-07 18:33:17,878 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:33:18,191 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:33:18,191 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:33:23,550 - INFO - poller.poller - [WS #263] Flushed 2180 positions (total: 56035)
+2026-02-07 18:33:43,568 - INFO - poller.poller - [WS #264] Flushed 19 positions (total: 56054)
+2026-02-07 18:33:45,478 - INFO - poller.poller - Stats: polls=201 failed=0 positions=56054 flushes=264 queue=0 dedup=2227 uptime=3180.2s
+2026-02-07 18:33:46,136 - INFO - poller.poller - [Poll #202] Fetched 179 routes
+2026-02-07 18:33:48,885 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:33:53,886 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:33:54,168 - INFO - poller.websocket_client - Got session ID: 4l7K_60nPe452pFpJMOq... (ping: 25s)
+2026-02-07 18:33:54,631 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:33:54,886 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:33:54,887 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:33:58,584 - INFO - poller.poller - [WS #265] Flushed 7 positions (total: 56061)
+2026-02-07 18:34:13,600 - INFO - poller.poller - [WS #266] Flushed 17 positions (total: 56078)
+2026-02-07 18:34:17,395 - INFO - poller.poller - [Poll #204] Fetched 179 routes
+2026-02-07 18:34:18,605 - INFO - poller.poller - [WS #267] Flushed 11 positions (total: 56089)
+2026-02-07 18:34:23,612 - INFO - poller.poller - [WS #268] Flushed 1 positions (total: 56090)
+2026-02-07 18:34:38,623 - INFO - poller.poller - [WS #269] Flushed 10 positions (total: 56100)
+2026-02-07 18:34:43,627 - INFO - poller.poller - [WS #270] Flushed 11 positions (total: 56111)
+2026-02-07 18:34:45,482 - INFO - poller.poller - Stats: polls=204 failed=0 positions=56111 flushes=270 queue=0 dedup=76 uptime=3240.2s
+2026-02-07 18:34:49,341 - INFO - poller.poller - [Poll #206] Fetched 179 routes
+2026-02-07 18:34:53,637 - INFO - poller.poller - [WS #271] Flushed 1 positions (total: 56112)
+2026-02-07 18:35:08,653 - INFO - poller.poller - [WS #272] Flushed 5 positions (total: 56117)
+2026-02-07 18:35:13,658 - INFO - poller.poller - [WS #273] Flushed 10 positions (total: 56127)
+2026-02-07 18:35:20,849 - INFO - poller.poller - [Poll #208] Fetched 179 routes
+2026-02-07 18:35:23,669 - INFO - poller.poller - [WS #274] Flushed 10 positions (total: 56137)
+2026-02-07 18:35:38,686 - INFO - poller.poller - [WS #275] Flushed 5 positions (total: 56142)
+2026-02-07 18:35:43,693 - INFO - poller.poller - [WS #276] Flushed 11 positions (total: 56153)
+2026-02-07 18:35:45,486 - INFO - poller.poller - Stats: polls=208 failed=0 positions=56153 flushes=276 queue=0 dedup=75 uptime=3300.2s
+2026-02-07 18:35:50,121 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:35:52,646 - INFO - poller.poller - [Poll #210] Fetched 179 routes
+2026-02-07 18:35:55,124 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:35:55,523 - INFO - poller.websocket_client - Got session ID: UoimJvj3NPhvn5-dJMPY... (ping: 25s)
+2026-02-07 18:35:56,010 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:35:56,353 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:35:56,353 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:35:58,716 - INFO - poller.poller - [WS #277] Flushed 2135 positions (total: 58288)
+2026-02-07 18:36:13,731 - INFO - poller.poller - [WS #278] Flushed 27 positions (total: 58315)
+2026-02-07 18:36:18,737 - INFO - poller.poller - [WS #279] Flushed 3 positions (total: 58318)
+2026-02-07 18:36:23,970 - INFO - poller.poller - [Poll #212] Fetched 179 routes
+2026-02-07 18:36:43,761 - INFO - poller.poller - [WS #280] Flushed 19 positions (total: 58337)
+2026-02-07 18:36:45,488 - INFO - poller.poller - Stats: polls=212 failed=0 positions=58337 flushes=280 queue=9 dedup=2204 uptime=3360.2s
+2026-02-07 18:36:48,769 - INFO - poller.poller - [WS #281] Flushed 9 positions (total: 58346)
+2026-02-07 18:36:52,798 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:36:55,798 - INFO - poller.poller - [Poll #214] Fetched 179 routes
+2026-02-07 18:36:57,801 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:36:58,107 - INFO - poller.websocket_client - Got session ID: Js9NQfLX7y4B-DPMJMP2... (ping: 25s)
+2026-02-07 18:36:58,586 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:36:58,894 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:36:58,895 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:37:08,782 - INFO - poller.poller - [WS #282] Flushed 13 positions (total: 58359)
+2026-02-07 18:37:13,786 - INFO - poller.poller - [WS #283] Flushed 11 positions (total: 58370)
+2026-02-07 18:37:18,790 - INFO - poller.poller - [WS #284] Flushed 1 positions (total: 58371)
+2026-02-07 18:37:27,300 - INFO - poller.poller - [Poll #216] Fetched 179 routes
+2026-02-07 18:37:29,595 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:37:34,597 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:37:34,849 - INFO - poller.websocket_client - Got session ID: edo_BBgGHzINt5EvJMQB... (ping: 25s)
+2026-02-07 18:37:35,269 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:37:35,506 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:37:35,506 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:37:38,816 - INFO - poller.poller - [WS #285] Flushed 2127 positions (total: 60498)
+2026-02-07 18:37:43,822 - INFO - poller.poller - [WS #286] Flushed 20 positions (total: 60518)
+2026-02-07 18:37:45,492 - INFO - poller.poller - Stats: polls=216 failed=0 positions=60518 flushes=286 queue=0 dedup=2203 uptime=3420.2s
+2026-02-07 18:37:59,586 - INFO - poller.poller - [Poll #218] Fetched 179 routes
+2026-02-07 18:38:05,982 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:38:10,986 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:38:11,251 - INFO - poller.websocket_client - Got session ID: uQohbav7US55Ekx5JMQO... (ping: 25s)
+2026-02-07 18:38:11,658 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:38:11,912 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:38:11,913 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:38:13,848 - INFO - poller.poller - [WS #287] Flushed 28 positions (total: 60546)
+2026-02-07 18:38:18,856 - INFO - poller.poller - [WS #288] Flushed 5 positions (total: 60551)
+2026-02-07 18:38:31,330 - INFO - poller.poller - [Poll #220] Fetched 179 routes
+2026-02-07 18:38:38,875 - INFO - poller.poller - [WS #289] Flushed 15 positions (total: 60566)
+2026-02-07 18:38:45,494 - INFO - poller.poller - Stats: polls=220 failed=0 positions=60566 flushes=289 queue=9 dedup=57 uptime=3480.2s
+2026-02-07 18:38:48,887 - INFO - poller.poller - [WS #290] Flushed 9 positions (total: 60575)
+2026-02-07 18:39:02,690 - INFO - poller.poller - [Poll #222] Fetched 179 routes
+2026-02-07 18:39:03,903 - INFO - poller.poller - [WS #291] Flushed 2 positions (total: 60577)
+2026-02-07 18:39:08,909 - INFO - poller.poller - [WS #292] Flushed 10 positions (total: 60587)
+2026-02-07 18:39:13,915 - INFO - poller.poller - [WS #293] Flushed 15 positions (total: 60602)
+2026-02-07 18:39:35,020 - INFO - poller.poller - [Poll #224] Fetched 179 routes
+2026-02-07 18:39:38,935 - INFO - poller.poller - [WS #294] Flushed 3 positions (total: 60605)
+2026-02-07 18:39:43,942 - INFO - poller.poller - [WS #295] Flushed 2 positions (total: 60607)
+2026-02-07 18:39:45,497 - INFO - poller.poller - Stats: polls=224 failed=0 positions=60607 flushes=295 queue=0 dedup=56 uptime=3540.2s
+2026-02-07 18:39:48,950 - INFO - poller.poller - [WS #296] Flushed 9 positions (total: 60616)
+2026-02-07 18:39:53,957 - INFO - poller.poller - [WS #297] Flushed 8 positions (total: 60624)
+2026-02-07 18:40:05,503 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:40:06,302 - INFO - poller.poller - [Poll #226] Fetched 179 routes
+2026-02-07 18:40:10,505 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:40:10,739 - INFO - poller.websocket_client - Got session ID: gJlHEmDn7qNcSY0hJMQ4... (ping: 25s)
+2026-02-07 18:40:11,116 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:40:11,339 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:40:11,339 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:40:13,990 - INFO - poller.poller - [WS #298] Flushed 2149 positions (total: 62773)
+2026-02-07 18:40:24,003 - INFO - poller.poller - [WS #299] Flushed 3 positions (total: 62776)
+2026-02-07 18:40:29,010 - INFO - poller.poller - [WS #300] Flushed 5 positions (total: 62781)
+2026-02-07 18:40:37,724 - INFO - poller.poller - [Poll #228] Fetched 179 routes
+2026-02-07 18:40:39,019 - INFO - poller.poller - [WS #301] Flushed 13 positions (total: 62794)
+2026-02-07 18:40:45,500 - INFO - poller.poller - Stats: polls=228 failed=0 positions=62794 flushes=301 queue=12 dedup=2199 uptime=3600.2s
+2026-02-07 18:40:49,033 - INFO - poller.poller - [WS #302] Flushed 12 positions (total: 62806)
+2026-02-07 18:41:09,050 - INFO - poller.poller - [WS #303] Flushed 11 positions (total: 62817)
+2026-02-07 18:41:10,912 - INFO - poller.poller - [Poll #230] Fetched 179 routes
+2026-02-07 18:41:14,056 - INFO - poller.poller - [WS #304] Flushed 7 positions (total: 62824)
+2026-02-07 18:41:19,062 - INFO - poller.poller - [WS #305] Flushed 7 positions (total: 62831)
+2026-02-07 18:41:42,275 - INFO - poller.poller - [Poll #232] Fetched 179 routes
+2026-02-07 18:41:44,085 - INFO - poller.poller - [WS #306] Flushed 20 positions (total: 62851)
+2026-02-07 18:41:45,503 - INFO - poller.poller - Stats: polls=232 failed=0 positions=62851 flushes=306 queue=7 dedup=85 uptime=3660.2s
+2026-02-07 18:41:49,093 - INFO - poller.poller - [WS #307] Flushed 7 positions (total: 62858)
+2026-02-07 18:42:04,677 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:42:09,678 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:42:10,945 - INFO - poller.websocket_client - Got session ID: AQdEyHzoyNVRWv-vJMRX... (ping: 25s)
+2026-02-07 18:42:11,329 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:42:11,557 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:42:11,557 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:42:14,120 - INFO - poller.poller - [WS #308] Flushed 2152 positions (total: 65010)
+2026-02-07 18:42:15,812 - INFO - poller.poller - [Poll #234] Fetched 179 routes
+2026-02-07 18:42:24,134 - INFO - poller.poller - [WS #309] Flushed 1 positions (total: 65011)
+2026-02-07 18:42:29,141 - INFO - poller.poller - [WS #310] Flushed 3 positions (total: 65014)
+2026-02-07 18:42:39,150 - INFO - poller.poller - [WS #311] Flushed 4 positions (total: 65018)
+2026-02-07 18:42:45,506 - INFO - poller.poller - Stats: polls=234 failed=0 positions=65018 flushes=311 queue=1 dedup=2168 uptime=3720.2s
+2026-02-07 18:42:47,668 - INFO - poller.poller - [Poll #236] Fetched 179 routes
+2026-02-07 18:42:49,159 - INFO - poller.poller - [WS #312] Flushed 1 positions (total: 65019)
+2026-02-07 18:43:09,175 - INFO - poller.poller - [WS #313] Flushed 11 positions (total: 65030)
+2026-02-07 18:43:14,180 - INFO - poller.poller - [WS #314] Flushed 13 positions (total: 65043)
+2026-02-07 18:43:19,513 - INFO - poller.poller - [Poll #238] Fetched 179 routes
+2026-02-07 18:43:39,202 - INFO - poller.poller - [WS #315] Flushed 5 positions (total: 65048)
+2026-02-07 18:43:44,205 - INFO - poller.poller - [WS #316] Flushed 11 positions (total: 65059)
+2026-02-07 18:43:45,508 - INFO - poller.poller - Stats: polls=238 failed=0 positions=65059 flushes=316 queue=0 dedup=45 uptime=3780.2s
+2026-02-07 18:43:50,737 - INFO - poller.poller - [Poll #240] Fetched 179 routes
+2026-02-07 18:44:09,230 - INFO - poller.poller - [WS #317] Flushed 4 positions (total: 65063)
+2026-02-07 18:44:14,236 - INFO - poller.poller - [WS #318] Flushed 17 positions (total: 65080)
+2026-02-07 18:44:19,240 - INFO - poller.poller - [WS #319] Flushed 6 positions (total: 65086)
+2026-02-07 18:44:23,713 - INFO - poller.poller - [Poll #242] Fetched 179 routes
+2026-02-07 18:44:39,260 - INFO - poller.poller - [WS #320] Flushed 3 positions (total: 65089)
+2026-02-07 18:44:44,268 - INFO - poller.poller - [WS #321] Flushed 17 positions (total: 65106)
+2026-02-07 18:44:45,511 - INFO - poller.poller - Stats: polls=242 failed=0 positions=65106 flushes=321 queue=0 dedup=76 uptime=3840.2s
+2026-02-07 18:44:55,519 - INFO - poller.poller - [Poll #244] Fetched 179 routes
+2026-02-07 18:44:59,276 - INFO - poller.poller - [WS #322] Flushed 1 positions (total: 65107)
+2026-02-07 18:45:05,302 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:45:10,304 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:45:10,575 - INFO - poller.websocket_client - Got session ID: KLey_KDQiVOL-kneJMSL... (ping: 25s)
+2026-02-07 18:45:11,020 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:45:11,294 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:45:11,294 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:45:14,298 - INFO - poller.poller - [WS #323] Flushed 2136 positions (total: 67243)
+2026-02-07 18:45:24,310 - INFO - poller.poller - [WS #324] Flushed 13 positions (total: 67256)
+2026-02-07 18:45:28,013 - INFO - poller.poller - [Poll #246] Fetched 179 routes
+2026-02-07 18:45:29,314 - INFO - poller.poller - [WS #325] Flushed 5 positions (total: 67261)
+2026-02-07 18:45:39,321 - INFO - poller.poller - [WS #326] Flushed 12 positions (total: 67273)
+2026-02-07 18:45:45,512 - INFO - poller.poller - Stats: polls=246 failed=0 positions=67273 flushes=326 queue=7 dedup=2191 uptime=3900.2s
+2026-02-07 18:45:49,329 - INFO - poller.poller - [WS #327] Flushed 7 positions (total: 67280)
+2026-02-07 18:45:59,279 - INFO - poller.poller - [Poll #248] Fetched 179 routes
+2026-02-07 18:46:09,344 - INFO - poller.poller - [WS #328] Flushed 15 positions (total: 67295)
+2026-02-07 18:46:14,347 - INFO - poller.poller - [WS #329] Flushed 11 positions (total: 67306)
+2026-02-07 18:46:32,113 - INFO - poller.poller - [Poll #250] Fetched 179 routes
+2026-02-07 18:46:39,366 - INFO - poller.poller - [WS #330] Flushed 11 positions (total: 67317)
+2026-02-07 18:46:44,370 - INFO - poller.poller - [WS #331] Flushed 14 positions (total: 67331)
+2026-02-07 18:46:45,515 - INFO - poller.poller - Stats: polls=250 failed=0 positions=67331 flushes=331 queue=0 dedup=88 uptime=3960.2s
+2026-02-07 18:47:03,428 - INFO - poller.poller - [Poll #252] Fetched 179 routes
+2026-02-07 18:47:09,391 - INFO - poller.poller - [WS #332] Flushed 7 positions (total: 67338)
+2026-02-07 18:47:14,397 - INFO - poller.poller - [WS #333] Flushed 22 positions (total: 67360)
+2026-02-07 18:47:19,400 - INFO - poller.poller - [WS #334] Flushed 1 positions (total: 67361)
+2026-02-07 18:47:35,828 - INFO - poller.poller - [Poll #254] Fetched 179 routes
+2026-02-07 18:47:36,016 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:47:41,019 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:47:41,351 - INFO - poller.websocket_client - Got session ID: Isx6vZy7f3SMhxrfJMS3... (ping: 25s)
+2026-02-07 18:47:41,834 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:47:42,123 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:47:42,123 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:47:44,426 - INFO - poller.poller - [WS #335] Flushed 2154 positions (total: 69515)
+2026-02-07 18:47:45,517 - INFO - poller.poller - Stats: polls=254 failed=0 positions=69515 flushes=335 queue=0 dedup=2184 uptime=4020.2s
+2026-02-07 18:47:49,433 - INFO - poller.poller - [WS #336] Flushed 5 positions (total: 69520)
+2026-02-07 18:48:07,130 - INFO - poller.poller - [Poll #256] Fetched 179 routes
+2026-02-07 18:48:14,456 - INFO - poller.poller - [WS #337] Flushed 16 positions (total: 69536)
+2026-02-07 18:48:19,463 - INFO - poller.poller - [WS #338] Flushed 4 positions (total: 69540)
+2026-02-07 18:48:24,468 - INFO - poller.poller - [WS #339] Flushed 1 positions (total: 69541)
+2026-02-07 18:48:38,882 - INFO - poller.poller - [Poll #258] Fetched 179 routes
+2026-02-07 18:48:39,482 - INFO - poller.poller - [WS #340] Flushed 8 positions (total: 69549)
+2026-02-07 18:48:44,485 - INFO - poller.poller - [WS #341] Flushed 4 positions (total: 69553)
+2026-02-07 18:48:45,520 - INFO - poller.poller - Stats: polls=258 failed=0 positions=69553 flushes=341 queue=0 dedup=2193 uptime=4080.2s
+2026-02-07 18:49:04,508 - INFO - poller.poller - [WS #342] Flushed 3 positions (total: 69556)
+2026-02-07 18:49:09,512 - INFO - poller.poller - [WS #343] Flushed 17 positions (total: 69573)
+2026-02-07 18:49:10,758 - INFO - poller.poller - [Poll #260] Fetched 179 routes
+2026-02-07 18:49:14,518 - INFO - poller.poller - [WS #344] Flushed 15 positions (total: 69588)
+2026-02-07 18:49:34,535 - INFO - poller.poller - [WS #345] Flushed 4 positions (total: 69592)
+2026-02-07 18:49:42,131 - INFO - poller.poller - [Poll #262] Fetched 179 routes
+2026-02-07 18:49:44,546 - INFO - poller.poller - [WS #346] Flushed 9 positions (total: 69601)
+2026-02-07 18:49:45,523 - INFO - poller.poller - Stats: polls=262 failed=0 positions=69601 flushes=346 queue=0 dedup=60 uptime=4140.2s
+2026-02-07 18:49:49,552 - INFO - poller.poller - [WS #347] Flushed 2 positions (total: 69603)
+2026-02-07 18:49:54,560 - INFO - poller.poller - [WS #348] Flushed 12 positions (total: 69615)
+2026-02-07 18:50:05,155 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:50:10,157 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:50:11,341 - INFO - poller.websocket_client - Got session ID: rTMH9f-Ap1WjLV5NJMTT... (ping: 25s)
+2026-02-07 18:50:11,750 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:50:11,982 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:50:11,982 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:50:13,602 - INFO - poller.poller - [Poll #264] Fetched 179 routes
+2026-02-07 18:50:14,582 - INFO - poller.poller - [WS #349] Flushed 2181 positions (total: 71796)
+2026-02-07 18:50:39,608 - INFO - poller.poller - [WS #350] Flushed 4 positions (total: 71800)
+2026-02-07 18:50:44,613 - INFO - poller.poller - [WS #351] Flushed 8 positions (total: 71808)
+2026-02-07 18:50:45,524 - INFO - poller.poller - Stats: polls=265 failed=0 positions=71808 flushes=351 queue=0 dedup=2207 uptime=4200.2s
+2026-02-07 18:50:47,270 - INFO - poller.poller - [Poll #266] Fetched 179 routes
+2026-02-07 18:50:54,623 - INFO - poller.poller - [WS #352] Flushed 8 positions (total: 71816)
+2026-02-07 18:50:59,631 - INFO - poller.poller - [WS #353] Flushed 1 positions (total: 71817)
+2026-02-07 18:51:08,064 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:51:09,640 - INFO - poller.poller - [WS #354] Flushed 9 positions (total: 71826)
+2026-02-07 18:51:13,068 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:51:15,575 - INFO - poller.websocket_client - Got session ID: FksKhxnKF-xGgvbIJMTl... (ping: 25s)
+2026-02-07 18:51:16,036 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:51:16,332 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:51:16,332 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:51:18,770 - INFO - poller.poller - [Poll #268] Fetched 179 routes
+2026-02-07 18:51:19,652 - INFO - poller.poller - [WS #355] Flushed 2148 positions (total: 73974)
+2026-02-07 18:51:39,676 - INFO - poller.poller - [WS #356] Flushed 11 positions (total: 73985)
+2026-02-07 18:51:44,683 - INFO - poller.poller - [WS #357] Flushed 22 positions (total: 74007)
+2026-02-07 18:51:45,527 - INFO - poller.poller - Stats: polls=268 failed=0 positions=74007 flushes=357 queue=0 dedup=2211 uptime=4260.2s
+2026-02-07 18:51:50,327 - INFO - poller.poller - [Poll #270] Fetched 179 routes
+2026-02-07 18:51:54,689 - INFO - poller.poller - [WS #358] Flushed 1 positions (total: 74008)
+2026-02-07 18:51:59,693 - INFO - poller.poller - [WS #359] Flushed 1 positions (total: 74009)
+2026-02-07 18:52:14,711 - INFO - poller.poller - [WS #360] Flushed 13 positions (total: 74022)
+2026-02-07 18:52:22,167 - INFO - poller.poller - [Poll #272] Fetched 179 routes
+2026-02-07 18:52:24,724 - INFO - poller.poller - [WS #361] Flushed 14 positions (total: 74036)
+2026-02-07 18:52:39,734 - INFO - poller.poller - [WS #362] Flushed 14 positions (total: 74050)
+2026-02-07 18:52:45,528 - INFO - poller.poller - Stats: polls=272 failed=0 positions=74050 flushes=362 queue=1 dedup=66 uptime=4320.2s
+2026-02-07 18:52:49,746 - INFO - poller.poller - [WS #363] Flushed 1 positions (total: 74051)
+2026-02-07 18:52:54,854 - INFO - poller.poller - [Poll #274] Fetched 179 routes
+2026-02-07 18:53:09,765 - INFO - poller.poller - [WS #364] Flushed 9 positions (total: 74060)
+2026-02-07 18:53:14,769 - INFO - poller.poller - [WS #365] Flushed 17 positions (total: 74077)
+2026-02-07 18:53:27,454 - INFO - poller.poller - [Poll #276] Fetched 179 routes
+2026-02-07 18:53:39,792 - INFO - poller.poller - [WS #366] Flushed 2 positions (total: 74079)
+2026-02-07 18:53:44,799 - INFO - poller.poller - [WS #367] Flushed 15 positions (total: 74094)
+2026-02-07 18:53:45,530 - INFO - poller.poller - Stats: polls=276 failed=0 positions=74094 flushes=367 queue=0 dedup=72 uptime=4380.2s
+2026-02-07 18:53:49,805 - INFO - poller.poller - [WS #368] Flushed 9 positions (total: 74103)
+2026-02-07 18:53:54,812 - INFO - poller.poller - [WS #369] Flushed 2 positions (total: 74105)
+2026-02-07 18:53:59,938 - INFO - poller.poller - [Poll #278] Fetched 179 routes
+2026-02-07 18:54:05,884 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:54:10,887 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:54:11,168 - INFO - poller.websocket_client - Got session ID: vHOK9qn1WCRwC6oSJMUe... (ping: 25s)
+2026-02-07 18:54:11,617 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:54:11,986 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:54:11,987 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:54:14,846 - INFO - poller.poller - [WS #370] Flushed 2150 positions (total: 76255)
+2026-02-07 18:54:31,729 - INFO - poller.poller - [Poll #280] Fetched 179 routes
+2026-02-07 18:54:34,869 - INFO - poller.poller - [WS #371] Flushed 2 positions (total: 76257)
+2026-02-07 18:54:39,873 - INFO - poller.poller - [WS #372] Flushed 12 positions (total: 76269)
+2026-02-07 18:54:44,876 - INFO - poller.poller - [WS #373] Flushed 2 positions (total: 76271)
+2026-02-07 18:54:45,533 - INFO - poller.poller - Stats: polls=280 failed=0 positions=76271 flushes=373 queue=0 dedup=2194 uptime=4440.2s
+2026-02-07 18:54:59,892 - INFO - poller.poller - [WS #374] Flushed 10 positions (total: 76281)
+2026-02-07 18:55:03,546 - INFO - poller.poller - [Poll #282] Fetched 179 routes
+2026-02-07 18:55:09,901 - INFO - poller.poller - [WS #375] Flushed 18 positions (total: 76299)
+2026-02-07 18:55:14,906 - INFO - poller.poller - [WS #376] Flushed 3 positions (total: 76302)
+2026-02-07 18:55:19,908 - INFO - poller.poller - [WS #377] Flushed 2 positions (total: 76304)
+2026-02-07 18:55:29,922 - INFO - poller.poller - [WS #378] Flushed 9 positions (total: 76313)
+2026-02-07 18:55:36,030 - INFO - poller.poller - [Poll #284] Fetched 179 routes
+2026-02-07 18:55:37,565 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:55:39,929 - INFO - poller.poller - [WS #379] Flushed 15 positions (total: 76328)
+2026-02-07 18:55:42,569 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:55:42,925 - INFO - poller.websocket_client - Got session ID: QNj5Q0B-RS59dAHPJMU1... (ping: 25s)
+2026-02-07 18:55:43,422 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:55:43,750 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:55:43,750 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:55:45,107 - INFO - poller.poller - [WS #380] Flushed 2135 positions (total: 78463)
+2026-02-07 18:55:45,535 - INFO - poller.poller - Stats: polls=284 failed=0 positions=78463 flushes=380 queue=0 dedup=2206 uptime=4500.2s
+2026-02-07 18:55:55,117 - INFO - poller.poller - [WS #381] Flushed 3 positions (total: 78466)
+2026-02-07 18:56:07,692 - INFO - poller.poller - [Poll #286] Fetched 179 routes
+2026-02-07 18:56:10,133 - INFO - poller.poller - [WS #382] Flushed 6 positions (total: 78472)
+2026-02-07 18:56:15,139 - INFO - poller.poller - [WS #383] Flushed 4 positions (total: 78476)
+2026-02-07 18:56:20,145 - INFO - poller.poller - [WS #384] Flushed 8 positions (total: 78484)
+2026-02-07 18:56:25,149 - INFO - poller.poller - [WS #385] Flushed 1 positions (total: 78485)
+2026-02-07 18:56:30,154 - INFO - poller.poller - [WS #386] Flushed 2 positions (total: 78487)
+2026-02-07 18:56:39,152 - INFO - poller.poller - [Poll #288] Fetched 179 routes
+2026-02-07 18:56:40,164 - INFO - poller.poller - [WS #387] Flushed 9 positions (total: 78496)
+2026-02-07 18:56:45,167 - INFO - poller.poller - [WS #388] Flushed 6 positions (total: 78502)
+2026-02-07 18:56:45,537 - INFO - poller.poller - Stats: polls=288 failed=0 positions=78502 flushes=388 queue=0 dedup=2152 uptime=4560.2s
+2026-02-07 18:57:00,179 - INFO - poller.poller - [WS #389] Flushed 5 positions (total: 78507)
+2026-02-07 18:57:10,185 - INFO - poller.poller - [WS #390] Flushed 12 positions (total: 78519)
+2026-02-07 18:57:11,709 - INFO - poller.poller - [Poll #290] Fetched 179 routes
+2026-02-07 18:57:15,188 - INFO - poller.poller - [WS #391] Flushed 1 positions (total: 78520)
+2026-02-07 18:57:25,201 - INFO - poller.poller - [WS #392] Flushed 9 positions (total: 78529)
+2026-02-07 18:57:30,205 - INFO - poller.poller - [WS #393] Flushed 1 positions (total: 78530)
+2026-02-07 18:57:40,216 - INFO - poller.poller - [WS #394] Flushed 9 positions (total: 78539)
+2026-02-07 18:57:43,692 - INFO - poller.poller - [Poll #292] Fetched 179 routes
+2026-02-07 18:57:45,220 - INFO - poller.poller - [WS #395] Flushed 6 positions (total: 78545)
+2026-02-07 18:57:45,538 - INFO - poller.poller - Stats: polls=292 failed=0 positions=78545 flushes=395 queue=0 dedup=61 uptime=4620.2s
+2026-02-07 18:58:05,235 - INFO - poller.poller - [WS #396] Flushed 3 positions (total: 78548)
+2026-02-07 18:58:16,007 - INFO - poller.poller - [Poll #294] Fetched 179 routes
+2026-02-07 18:58:20,248 - INFO - poller.poller - [WS #397] Flushed 10 positions (total: 78558)
+2026-02-07 18:58:25,253 - INFO - poller.poller - [WS #398] Flushed 12 positions (total: 78570)
+2026-02-07 18:58:30,257 - INFO - poller.poller - [WS #399] Flushed 2 positions (total: 78572)
+2026-02-07 18:58:35,847 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 18:58:40,849 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 18:58:42,464 - INFO - poller.websocket_client - Got session ID: HKH5WY9fTy7q-_x-JMVz... (ping: 25s)
+2026-02-07 18:58:43,251 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 18:58:43,605 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 18:58:43,605 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 18:58:45,278 - INFO - poller.poller - [WS #400] Flushed 2153 positions (total: 80725)
+2026-02-07 18:58:45,539 - INFO - poller.poller - Stats: polls=294 failed=0 positions=80725 flushes=400 queue=0 dedup=2180 uptime=4680.2s
+2026-02-07 18:58:47,675 - INFO - poller.poller - [Poll #296] Fetched 179 routes
+2026-02-07 18:58:50,284 - INFO - poller.poller - [WS #401] Flushed 2 positions (total: 80727)
+2026-02-07 18:59:10,302 - INFO - poller.poller - [WS #402] Flushed 3 positions (total: 80730)
+2026-02-07 18:59:15,305 - INFO - poller.poller - [WS #403] Flushed 11 positions (total: 80741)
+2026-02-07 18:59:19,054 - INFO - poller.poller - [Poll #298] Fetched 179 routes
+2026-02-07 18:59:30,320 - INFO - poller.poller - [WS #404] Flushed 9 positions (total: 80750)
+2026-02-07 18:59:40,325 - INFO - poller.poller - [WS #405] Flushed 8 positions (total: 80758)
+2026-02-07 18:59:45,540 - INFO - poller.poller - Stats: polls=298 failed=0 positions=80758 flushes=405 queue=0 dedup=2188 uptime=4740.2s
+2026-02-07 18:59:50,332 - INFO - poller.poller - [WS #406] Flushed 3 positions (total: 80761)
+2026-02-07 18:59:50,733 - INFO - poller.poller - [Poll #300] Fetched 179 routes
+2026-02-07 18:59:55,336 - INFO - poller.poller - [WS #407] Flushed 2 positions (total: 80763)
+2026-02-07 19:00:10,352 - INFO - poller.poller - [WS #408] Flushed 8 positions (total: 80771)
+2026-02-07 19:00:15,357 - INFO - poller.poller - [WS #409] Flushed 11 positions (total: 80782)
+2026-02-07 19:00:20,362 - INFO - poller.poller - [WS #410] Flushed 1 positions (total: 80783)
+2026-02-07 19:00:22,092 - INFO - poller.poller - [Poll #302] Fetched 179 routes
+2026-02-07 19:00:35,374 - INFO - poller.poller - [WS #411] Flushed 1 positions (total: 80784)
+2026-02-07 19:00:40,377 - INFO - poller.poller - [WS #412] Flushed 8 positions (total: 80792)
+2026-02-07 19:00:45,542 - INFO - poller.poller - Stats: polls=302 failed=0 positions=80792 flushes=412 queue=0 dedup=34 uptime=4800.2s
+2026-02-07 19:00:53,871 - INFO - poller.poller - [Poll #304] Fetched 179 routes
+2026-02-07 19:00:55,393 - INFO - poller.poller - [WS #413] Flushed 12 positions (total: 80804)
+2026-02-07 19:01:05,306 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:01:10,308 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:01:11,942 - INFO - poller.websocket_client - Got session ID: XpDHRW8C7TGIDKqIJMWg... (ping: 25s)
+2026-02-07 19:01:12,405 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:01:12,714 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:01:12,715 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:01:15,408 - INFO - poller.poller - [WS #414] Flushed 2151 positions (total: 82955)
+2026-02-07 19:01:20,414 - INFO - poller.poller - [WS #415] Flushed 3 positions (total: 82958)
+2026-02-07 19:01:25,266 - INFO - poller.poller - [Poll #306] Fetched 179 routes
+2026-02-07 19:01:40,429 - INFO - poller.poller - [WS #416] Flushed 15 positions (total: 82973)
+2026-02-07 19:01:45,433 - INFO - poller.poller - [WS #417] Flushed 10 positions (total: 82983)
+2026-02-07 19:01:45,543 - INFO - poller.poller - Stats: polls=306 failed=0 positions=82983 flushes=417 queue=0 dedup=2201 uptime=4860.2s
+2026-02-07 19:01:58,096 - INFO - poller.poller - [Poll #308] Fetched 179 routes
+2026-02-07 19:02:10,449 - INFO - poller.poller - [WS #418] Flushed 3 positions (total: 82986)
+2026-02-07 19:02:15,454 - INFO - poller.poller - [WS #419] Flushed 15 positions (total: 83001)
+2026-02-07 19:02:30,194 - INFO - poller.poller - [Poll #310] Fetched 179 routes
+2026-02-07 19:02:35,469 - INFO - poller.poller - [WS #420] Flushed 1 positions (total: 83002)
+2026-02-07 19:02:40,472 - INFO - poller.poller - [WS #421] Flushed 11 positions (total: 83013)
+2026-02-07 19:02:45,546 - INFO - poller.poller - Stats: polls=310 failed=0 positions=83013 flushes=421 queue=0 dedup=40 uptime=4920.2s
+2026-02-07 19:02:50,486 - INFO - poller.poller - [WS #422] Flushed 10 positions (total: 83023)
+2026-02-07 19:02:55,494 - INFO - poller.poller - [WS #423] Flushed 3 positions (total: 83026)
+2026-02-07 19:03:02,083 - INFO - poller.poller - [Poll #312] Fetched 179 routes
+2026-02-07 19:03:05,268 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:03:10,274 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:03:10,653 - INFO - poller.websocket_client - Got session ID: SrqJemUf9sIxX9kdJMXQ... (ping: 25s)
+2026-02-07 19:03:11,130 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:03:11,453 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:03:11,454 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:03:15,507 - INFO - poller.poller - [WS #424] Flushed 2164 positions (total: 85190)
+2026-02-07 19:03:20,512 - INFO - poller.poller - [WS #425] Flushed 2 positions (total: 85192)
+2026-02-07 19:03:33,330 - INFO - poller.poller - [Poll #314] Fetched 179 routes
+2026-02-07 19:03:40,532 - INFO - poller.poller - [WS #426] Flushed 13 positions (total: 85205)
+2026-02-07 19:03:45,539 - INFO - poller.poller - [WS #427] Flushed 7 positions (total: 85212)
+2026-02-07 19:03:45,548 - INFO - poller.poller - Stats: polls=314 failed=0 positions=85212 flushes=427 queue=0 dedup=2199 uptime=4980.2s
+2026-02-07 19:04:05,886 - INFO - poller.poller - [Poll #316] Fetched 179 routes
+2026-02-07 19:04:10,560 - INFO - poller.poller - [WS #428] Flushed 6 positions (total: 85218)
+2026-02-07 19:04:15,566 - INFO - poller.poller - [WS #429] Flushed 14 positions (total: 85232)
+2026-02-07 19:04:35,585 - INFO - poller.poller - [WS #430] Flushed 2 positions (total: 85234)
+2026-02-07 19:04:37,802 - INFO - poller.poller - [Poll #318] Fetched 179 routes
+2026-02-07 19:04:40,588 - INFO - poller.poller - [WS #431] Flushed 13 positions (total: 85247)
+2026-02-07 19:04:45,554 - INFO - poller.poller - Stats: polls=318 failed=0 positions=85247 flushes=431 queue=0 dedup=55 uptime=5040.2s
+2026-02-07 19:05:00,606 - INFO - poller.poller - [WS #432] Flushed 4 positions (total: 85251)
+2026-02-07 19:05:05,222 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:05:09,624 - INFO - poller.poller - [Poll #320] Fetched 179 routes
+2026-02-07 19:05:10,225 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:05:10,918 - INFO - poller.websocket_client - Got session ID: AHXtF0J7JGPbibQMJMYA... (ping: 25s)
+2026-02-07 19:05:11,426 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:05:11,965 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:05:11,965 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:05:15,620 - INFO - poller.poller - [WS #433] Flushed 2154 positions (total: 87405)
+2026-02-07 19:05:40,641 - INFO - poller.poller - [WS #434] Flushed 14 positions (total: 87419)
+2026-02-07 19:05:42,110 - INFO - poller.poller - [Poll #322] Fetched 179 routes
+2026-02-07 19:05:45,558 - INFO - poller.poller - Stats: polls=322 failed=0 positions=87419 flushes=434 queue=3 dedup=2175 uptime=5100.2s
+2026-02-07 19:05:45,644 - INFO - poller.poller - [WS #435] Flushed 3 positions (total: 87422)
+2026-02-07 19:05:55,651 - INFO - poller.poller - [WS #436] Flushed 1 positions (total: 87423)
+2026-02-07 19:06:10,665 - INFO - poller.poller - [WS #437] Flushed 20 positions (total: 87443)
+2026-02-07 19:06:13,429 - INFO - poller.poller - [Poll #324] Fetched 179 routes
+2026-02-07 19:06:15,671 - INFO - poller.poller - [WS #438] Flushed 10 positions (total: 87453)
+2026-02-07 19:06:40,697 - INFO - poller.poller - [WS #439] Flushed 17 positions (total: 87470)
+2026-02-07 19:06:45,559 - INFO - poller.poller - Stats: polls=325 failed=0 positions=87470 flushes=439 queue=10 dedup=75 uptime=5160.2s
+2026-02-07 19:06:45,701 - INFO - poller.poller - [WS #440] Flushed 10 positions (total: 87480)
+2026-02-07 19:06:45,924 - INFO - poller.poller - [Poll #326] Fetched 179 routes
+2026-02-07 19:07:08,416 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:07:13,420 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:07:14,628 - INFO - poller.websocket_client - Got session ID: hrf6ZputDFApBs_jJMYf... (ping: 25s)
+2026-02-07 19:07:15,047 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:07:15,301 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:07:15,301 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:07:17,173 - INFO - poller.poller - [Poll #328] Fetched 179 routes
+2026-02-07 19:07:20,742 - INFO - poller.poller - [WS #441] Flushed 2149 positions (total: 89629)
+2026-02-07 19:07:40,762 - INFO - poller.poller - [WS #442] Flushed 2 positions (total: 89631)
+2026-02-07 19:07:45,563 - INFO - poller.poller - Stats: polls=328 failed=0 positions=89631 flushes=442 queue=14 dedup=2192 uptime=5220.2s
+2026-02-07 19:07:45,766 - INFO - poller.poller - [WS #443] Flushed 14 positions (total: 89645)
+2026-02-07 19:07:49,258 - INFO - poller.poller - [Poll #330] Fetched 179 routes
+2026-02-07 19:07:50,771 - INFO - poller.poller - [WS #444] Flushed 2 positions (total: 89647)
+2026-02-07 19:08:10,790 - INFO - poller.poller - [WS #445] Flushed 8 positions (total: 89655)
+2026-02-07 19:08:15,795 - INFO - poller.poller - [WS #446] Flushed 4 positions (total: 89659)
+2026-02-07 19:08:21,145 - INFO - poller.poller - [Poll #332] Fetched 179 routes
+2026-02-07 19:08:30,806 - INFO - poller.poller - [WS #447] Flushed 3 positions (total: 89662)
+2026-02-07 19:08:38,790 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:08:43,795 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:08:45,565 - INFO - poller.websocket_client - Got session ID: XbmL-6eXx1dth55TJMY7... (ping: 25s)
+2026-02-07 19:08:45,567 - INFO - poller.poller - Stats: polls=332 failed=0 positions=89662 flushes=447 queue=0 dedup=33 uptime=5280.3s
+2026-02-07 19:08:45,969 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:08:46,220 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:08:46,220 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:08:50,827 - INFO - poller.poller - [WS #448] Flushed 2159 positions (total: 91821)
+2026-02-07 19:08:52,516 - INFO - poller.poller - [Poll #334] Fetched 179 routes
+2026-02-07 19:08:55,832 - INFO - poller.poller - [WS #449] Flushed 3 positions (total: 91824)
+2026-02-07 19:09:10,845 - INFO - poller.poller - [WS #450] Flushed 6 positions (total: 91830)
+2026-02-07 19:09:15,849 - INFO - poller.poller - [WS #451] Flushed 8 positions (total: 91838)
+2026-02-07 19:09:23,755 - INFO - poller.poller - [Poll #336] Fetched 179 routes
+2026-02-07 19:09:25,861 - INFO - poller.poller - [WS #452] Flushed 6 positions (total: 91844)
+2026-02-07 19:09:35,872 - INFO - poller.poller - [WS #453] Flushed 4 positions (total: 91848)
+2026-02-07 19:09:45,572 - INFO - poller.poller - Stats: polls=336 failed=0 positions=91848 flushes=453 queue=16 dedup=2202 uptime=5340.3s
+2026-02-07 19:09:45,878 - INFO - poller.poller - [WS #454] Flushed 16 positions (total: 91864)
+2026-02-07 19:09:50,885 - INFO - poller.poller - [WS #455] Flushed 1 positions (total: 91865)
+2026-02-07 19:09:56,170 - INFO - poller.poller - [Poll #338] Fetched 179 routes
+2026-02-07 19:10:10,897 - INFO - poller.poller - [WS #456] Flushed 1 positions (total: 91866)
+2026-02-07 19:10:15,901 - INFO - poller.poller - [WS #457] Flushed 2 positions (total: 91868)
+2026-02-07 19:10:20,904 - INFO - poller.poller - [WS #458] Flushed 10 positions (total: 91878)
+2026-02-07 19:10:28,226 - INFO - poller.poller - [Poll #340] Fetched 179 routes
+2026-02-07 19:10:38,586 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:10:43,590 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:10:45,285 - INFO - poller.websocket_client - Got session ID: AYABV7xRTM81LQwsJMZd... (ping: 25s)
+2026-02-07 19:10:45,574 - INFO - poller.poller - Stats: polls=340 failed=0 positions=91878 flushes=458 queue=0 dedup=48 uptime=5400.3s
+2026-02-07 19:10:45,774 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:10:46,100 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:10:46,100 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:10:50,943 - INFO - poller.poller - [WS #459] Flushed 2153 positions (total: 94031)
+2026-02-07 19:10:55,951 - INFO - poller.poller - [WS #460] Flushed 5 positions (total: 94036)
+2026-02-07 19:11:00,024 - INFO - poller.poller - [Poll #342] Fetched 179 routes
+2026-02-07 19:11:15,969 - INFO - poller.poller - [WS #461] Flushed 11 positions (total: 94047)
+2026-02-07 19:11:32,539 - INFO - poller.poller - [Poll #344] Fetched 179 routes
+2026-02-07 19:11:40,988 - INFO - poller.poller - [WS #462] Flushed 14 positions (total: 94061)
+2026-02-07 19:11:45,580 - INFO - poller.poller - Stats: polls=344 failed=0 positions=94061 flushes=462 queue=0 dedup=2183 uptime=5460.3s
+2026-02-07 19:11:50,997 - INFO - poller.poller - [WS #463] Flushed 6 positions (total: 94067)
+2026-02-07 19:12:07,126 - INFO - poller.poller - [Poll #346] Fetched 179 routes
+2026-02-07 19:12:11,020 - INFO - poller.poller - [WS #464] Flushed 5 positions (total: 94072)
+2026-02-07 19:12:16,025 - INFO - poller.poller - [WS #465] Flushed 12 positions (total: 94084)
+2026-02-07 19:12:36,043 - INFO - poller.poller - [WS #466] Flushed 1 positions (total: 94085)
+2026-02-07 19:12:38,836 - INFO - poller.poller - [Poll #348] Fetched 179 routes
+2026-02-07 19:12:41,049 - INFO - poller.poller - [WS #467] Flushed 8 positions (total: 94093)
+2026-02-07 19:12:45,586 - INFO - poller.poller - Stats: polls=348 failed=0 positions=94093 flushes=467 queue=0 dedup=46 uptime=5520.3s
+2026-02-07 19:12:46,051 - INFO - poller.poller - [WS #468] Flushed 10 positions (total: 94103)
+2026-02-07 19:13:02,519 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:13:07,521 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:13:08,752 - INFO - poller.websocket_client - Got session ID: dx1N1WQIHudg_3bmJMaJ... (ping: 25s)
+2026-02-07 19:13:09,249 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:13:09,496 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:13:09,497 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:13:10,168 - INFO - poller.poller - [Poll #350] Fetched 179 routes
+2026-02-07 19:13:11,081 - INFO - poller.poller - [WS #469] Flushed 2193 positions (total: 96296)
+2026-02-07 19:13:16,089 - INFO - poller.poller - [WS #470] Flushed 7 positions (total: 96303)
+2026-02-07 19:13:21,094 - INFO - poller.poller - [WS #471] Flushed 6 positions (total: 96309)
+2026-02-07 19:13:26,097 - INFO - poller.poller - [WS #472] Flushed 6 positions (total: 96315)
+2026-02-07 19:13:36,109 - INFO - poller.poller - [WS #473] Flushed 1 positions (total: 96316)
+2026-02-07 19:13:41,112 - INFO - poller.poller - [WS #474] Flushed 12 positions (total: 96328)
+2026-02-07 19:13:42,041 - INFO - poller.poller - [Poll #352] Fetched 179 routes
+2026-02-07 19:13:45,588 - INFO - poller.poller - Stats: polls=352 failed=0 positions=96328 flushes=474 queue=3 dedup=2247 uptime=5580.3s
+2026-02-07 19:13:46,116 - INFO - poller.poller - [WS #475] Flushed 3 positions (total: 96331)
+2026-02-07 19:14:06,135 - INFO - poller.poller - [WS #476] Flushed 4 positions (total: 96335)
+2026-02-07 19:14:11,137 - INFO - poller.poller - [WS #477] Flushed 14 positions (total: 96349)
+2026-02-07 19:14:13,400 - INFO - poller.poller - [Poll #354] Fetched 179 routes
+2026-02-07 19:14:31,154 - INFO - poller.poller - [WS #478] Flushed 1 positions (total: 96350)
+2026-02-07 19:14:41,166 - INFO - poller.poller - [WS #479] Flushed 17 positions (total: 96367)
+2026-02-07 19:14:45,039 - INFO - poller.poller - [Poll #356] Fetched 179 routes
+2026-02-07 19:14:45,589 - INFO - poller.poller - Stats: polls=356 failed=0 positions=96367 flushes=479 queue=2 dedup=53 uptime=5640.3s
+2026-02-07 19:14:46,169 - INFO - poller.poller - [WS #480] Flushed 2 positions (total: 96369)
+2026-02-07 19:14:51,173 - INFO - poller.poller - [WS #481] Flushed 1 positions (total: 96370)
+2026-02-07 19:14:56,175 - INFO - poller.poller - [WS #482] Flushed 8 positions (total: 96378)
+2026-02-07 19:15:11,184 - INFO - poller.poller - [WS #483] Flushed 13 positions (total: 96391)
+2026-02-07 19:15:16,342 - INFO - poller.poller - [Poll #358] Fetched 179 routes
+2026-02-07 19:15:21,191 - INFO - poller.poller - [WS #484] Flushed 3 positions (total: 96394)
+2026-02-07 19:15:26,198 - INFO - poller.poller - [WS #485] Flushed 5 positions (total: 96399)
+2026-02-07 19:15:36,209 - INFO - poller.poller - [WS #486] Flushed 2 positions (total: 96401)
+2026-02-07 19:15:41,213 - INFO - poller.poller - [WS #487] Flushed 15 positions (total: 96416)
+2026-02-07 19:15:45,595 - INFO - poller.poller - Stats: polls=358 failed=0 positions=96416 flushes=487 queue=0 dedup=49 uptime=5700.3s
+2026-02-07 19:15:47,978 - INFO - poller.poller - [Poll #360] Fetched 179 routes
+2026-02-07 19:15:51,220 - INFO - poller.poller - [WS #488] Flushed 4 positions (total: 96420)
+2026-02-07 19:15:56,226 - INFO - poller.poller - [WS #489] Flushed 10 positions (total: 96430)
+2026-02-07 19:16:01,231 - INFO - poller.poller - [WS #490] Flushed 1 positions (total: 96431)
+2026-02-07 19:16:06,235 - INFO - poller.poller - [WS #491] Flushed 2 positions (total: 96433)
+2026-02-07 19:16:11,238 - INFO - poller.poller - [WS #492] Flushed 18 positions (total: 96451)
+2026-02-07 19:16:19,907 - INFO - poller.poller - [Poll #362] Fetched 179 routes
+2026-02-07 19:16:21,248 - INFO - poller.poller - [WS #493] Flushed 4 positions (total: 96455)
+2026-02-07 19:16:31,259 - INFO - poller.poller - [WS #494] Flushed 1 positions (total: 96456)
+2026-02-07 19:16:41,265 - INFO - poller.poller - [WS #495] Flushed 14 positions (total: 96470)
+2026-02-07 19:16:45,599 - INFO - poller.poller - Stats: polls=362 failed=0 positions=96470 flushes=495 queue=4 dedup=58 uptime=5760.3s
+2026-02-07 19:16:46,269 - INFO - poller.poller - [WS #496] Flushed 4 positions (total: 96474)
+2026-02-07 19:16:51,272 - INFO - poller.poller - [WS #497] Flushed 4 positions (total: 96478)
+2026-02-07 19:16:51,823 - INFO - poller.poller - [Poll #364] Fetched 179 routes
+2026-02-07 19:17:11,291 - INFO - poller.poller - [WS #498] Flushed 4 positions (total: 96482)
+2026-02-07 19:17:16,298 - INFO - poller.poller - [WS #499] Flushed 15 positions (total: 96497)
+2026-02-07 19:17:21,303 - INFO - poller.poller - [WS #500] Flushed 2 positions (total: 96499)
+2026-02-07 19:17:23,663 - INFO - poller.poller - [Poll #366] Fetched 179 routes
+2026-02-07 19:17:41,321 - INFO - poller.poller - [WS #501] Flushed 4 positions (total: 96503)
+2026-02-07 19:17:45,604 - INFO - poller.poller - Stats: polls=366 failed=0 positions=96503 flushes=501 queue=15 dedup=63 uptime=5820.3s
+2026-02-07 19:17:46,324 - INFO - poller.poller - [WS #502] Flushed 15 positions (total: 96518)
+2026-02-07 19:17:55,509 - INFO - poller.poller - [Poll #368] Fetched 179 routes
+2026-02-07 19:18:11,345 - INFO - poller.poller - [WS #503] Flushed 16 positions (total: 96534)
+2026-02-07 19:18:16,350 - INFO - poller.poller - [WS #504] Flushed 5 positions (total: 96539)
+2026-02-07 19:18:26,356 - INFO - poller.poller - [WS #505] Flushed 2 positions (total: 96541)
+2026-02-07 19:18:26,921 - INFO - poller.poller - [Poll #370] Fetched 179 routes
+2026-02-07 19:18:41,371 - INFO - poller.poller - [WS #506] Flushed 10 positions (total: 96551)
+2026-02-07 19:18:45,607 - INFO - poller.poller - Stats: polls=370 failed=0 positions=96551 flushes=506 queue=0 dedup=69 uptime=5880.3s
+2026-02-07 19:18:51,377 - INFO - poller.poller - [WS #507] Flushed 9 positions (total: 96560)
+2026-02-07 19:18:58,676 - INFO - poller.poller - [Poll #372] Fetched 179 routes
+2026-02-07 19:19:03,978 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:19:08,982 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:19:09,305 - INFO - poller.websocket_client - Got session ID: 2PdM8ngYwJFukLkoJMcB... (ping: 25s)
+2026-02-07 19:19:09,771 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:19:10,084 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:19:10,085 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:19:16,398 - INFO - poller.poller - [WS #508] Flushed 2142 positions (total: 98702)
+2026-02-07 19:19:21,402 - INFO - poller.poller - [WS #509] Flushed 9 positions (total: 98711)
+2026-02-07 19:19:26,408 - INFO - poller.poller - [WS #510] Flushed 1 positions (total: 98712)
+2026-02-07 19:19:31,052 - INFO - poller.poller - [Poll #374] Fetched 179 routes
+2026-02-07 19:19:41,421 - INFO - poller.poller - [WS #511] Flushed 5 positions (total: 98717)
+2026-02-07 19:19:45,611 - INFO - poller.poller - Stats: polls=374 failed=0 positions=98717 flushes=511 queue=4 dedup=2180 uptime=5940.3s
+2026-02-07 19:19:46,424 - INFO - poller.poller - [WS #512] Flushed 4 positions (total: 98721)
+2026-02-07 19:19:56,433 - INFO - poller.poller - [WS #513] Flushed 8 positions (total: 98729)
+2026-02-07 19:20:03,815 - INFO - poller.poller - [Poll #376] Fetched 179 routes
+2026-02-07 19:20:06,438 - INFO - poller.poller - [WS #514] Flushed 2 positions (total: 98731)
+2026-02-07 19:20:11,441 - INFO - poller.poller - [WS #515] Flushed 15 positions (total: 98746)
+2026-02-07 19:20:21,451 - INFO - poller.poller - [WS #516] Flushed 2 positions (total: 98748)
+2026-02-07 19:20:35,429 - INFO - poller.poller - [Poll #378] Fetched 179 routes
+2026-02-07 19:20:41,469 - INFO - poller.poller - [WS #517] Flushed 5 positions (total: 98753)
+2026-02-07 19:20:45,613 - INFO - poller.poller - Stats: polls=378 failed=0 positions=98753 flushes=517 queue=17 dedup=53 uptime=6000.3s
+2026-02-07 19:20:46,473 - INFO - poller.poller - [WS #518] Flushed 17 positions (total: 98770)
+2026-02-07 19:21:01,486 - INFO - poller.poller - [WS #519] Flushed 1 positions (total: 98771)
+2026-02-07 19:21:05,004 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:21:06,874 - INFO - poller.poller - [Poll #380] Fetched 179 routes
+2026-02-07 19:21:10,008 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:21:10,272 - INFO - poller.websocket_client - Got session ID: Uj0HY7nP7XC04C0yJMcv... (ping: 25s)
+2026-02-07 19:21:10,690 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:21:10,946 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:21:10,946 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:21:16,509 - INFO - poller.poller - [WS #520] Flushed 2152 positions (total: 100923)
+2026-02-07 19:21:21,511 - INFO - poller.poller - [WS #521] Flushed 5 positions (total: 100928)
+2026-02-07 19:21:26,515 - INFO - poller.poller - [WS #522] Flushed 1 positions (total: 100929)
+2026-02-07 19:21:39,019 - INFO - poller.poller - [Poll #382] Fetched 179 routes
+2026-02-07 19:21:41,531 - INFO - poller.poller - [WS #523] Flushed 13 positions (total: 100942)
+2026-02-07 19:21:45,616 - INFO - poller.poller - Stats: polls=382 failed=0 positions=100942 flushes=523 queue=6 dedup=2195 uptime=6060.3s
+2026-02-07 19:21:46,535 - INFO - poller.poller - [WS #524] Flushed 6 positions (total: 100948)
+2026-02-07 19:22:11,554 - INFO - poller.poller - [WS #525] Flushed 9 positions (total: 100957)
+2026-02-07 19:22:11,869 - INFO - poller.poller - [Poll #384] Fetched 179 routes
+2026-02-07 19:22:16,563 - INFO - poller.poller - [WS #526] Flushed 1 positions (total: 100958)
+2026-02-07 19:22:21,570 - INFO - poller.poller - [WS #527] Flushed 15 positions (total: 100973)
+2026-02-07 19:22:26,577 - INFO - poller.poller - [WS #528] Flushed 3 positions (total: 100976)
+2026-02-07 19:22:36,588 - INFO - poller.poller - [WS #529] Flushed 3 positions (total: 100979)
+2026-02-07 19:22:41,591 - INFO - poller.poller - [WS #530] Flushed 11 positions (total: 100990)
+2026-02-07 19:22:43,616 - INFO - poller.poller - [Poll #386] Fetched 179 routes
+2026-02-07 19:22:45,619 - INFO - poller.poller - Stats: polls=386 failed=0 positions=100990 flushes=530 queue=0 dedup=67 uptime=6120.3s
+2026-02-07 19:22:51,599 - INFO - poller.poller - [WS #531] Flushed 12 positions (total: 101002)
+2026-02-07 19:23:06,615 - INFO - poller.poller - [WS #532] Flushed 1 positions (total: 101003)
+2026-02-07 19:23:11,619 - INFO - poller.poller - [WS #533] Flushed 8 positions (total: 101011)
+2026-02-07 19:23:14,956 - INFO - poller.poller - [Poll #388] Fetched 179 routes
+2026-02-07 19:23:16,624 - INFO - poller.poller - [WS #534] Flushed 7 positions (total: 101018)
+2026-02-07 19:23:34,642 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:23:39,646 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:23:41,483 - INFO - poller.websocket_client - Got session ID: 0OqJrPC-y5nbT-JxJMdZ... (ping: 25s)
+2026-02-07 19:23:41,937 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:23:42,213 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:23:42,214 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:23:45,621 - INFO - poller.poller - Stats: polls=389 failed=0 positions=101018 flushes=534 queue=2163 dedup=2191 uptime=6180.3s
+2026-02-07 19:23:46,397 - INFO - poller.poller - [Poll #390] Fetched 179 routes
+2026-02-07 19:23:46,649 - INFO - poller.poller - [WS #535] Flushed 2163 positions (total: 103181)
+2026-02-07 19:24:11,674 - INFO - poller.poller - [WS #536] Flushed 5 positions (total: 103186)
+2026-02-07 19:24:16,679 - INFO - poller.poller - [WS #537] Flushed 13 positions (total: 103199)
+2026-02-07 19:24:20,167 - INFO - poller.poller - [Poll #392] Fetched 179 routes
+2026-02-07 19:24:21,684 - INFO - poller.poller - [WS #538] Flushed 1 positions (total: 103200)
+2026-02-07 19:24:38,773 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:24:43,777 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:24:45,623 - INFO - poller.poller - Stats: polls=392 failed=0 positions=103200 flushes=538 queue=0 dedup=2189 uptime=6240.3s
+2026-02-07 19:24:45,989 - INFO - poller.websocket_client - Got session ID: u3KvoxC2IzD6sBE4JMdv... (ping: 25s)
+2026-02-07 19:24:47,125 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:24:47,459 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:24:47,460 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:24:51,721 - INFO - poller.poller - [WS #539] Flushed 2165 positions (total: 105365)
+2026-02-07 19:24:52,694 - INFO - poller.poller - [Poll #394] Fetched 179 routes
+2026-02-07 19:25:11,739 - INFO - poller.poller - [WS #540] Flushed 9 positions (total: 105374)
+2026-02-07 19:25:16,748 - INFO - poller.poller - [WS #541] Flushed 9 positions (total: 105383)
+2026-02-07 19:25:25,694 - INFO - poller.poller - [Poll #396] Fetched 179 routes
+2026-02-07 19:25:41,770 - INFO - poller.poller - [WS #542] Flushed 17 positions (total: 105400)
+2026-02-07 19:25:45,626 - INFO - poller.poller - Stats: polls=396 failed=0 positions=105400 flushes=542 queue=11 dedup=2211 uptime=6300.3s
+2026-02-07 19:25:46,774 - INFO - poller.poller - [WS #543] Flushed 11 positions (total: 105411)
+2026-02-07 19:25:57,025 - INFO - poller.poller - [Poll #398] Fetched 179 routes
+2026-02-07 19:26:06,790 - INFO - poller.poller - [WS #544] Flushed 1 positions (total: 105412)
+2026-02-07 19:26:11,794 - INFO - poller.poller - [WS #545] Flushed 18 positions (total: 105430)
+2026-02-07 19:26:16,798 - INFO - poller.poller - [WS #546] Flushed 1 positions (total: 105431)
+2026-02-07 19:26:26,813 - INFO - poller.poller - [WS #547] Flushed 1 positions (total: 105432)
+2026-02-07 19:26:28,290 - INFO - poller.poller - [Poll #400] Fetched 179 routes
+2026-02-07 19:26:41,830 - INFO - poller.poller - [WS #548] Flushed 10 positions (total: 105442)
+2026-02-07 19:26:45,630 - INFO - poller.poller - Stats: polls=400 failed=0 positions=105442 flushes=548 queue=5 dedup=36 uptime=6360.3s
+2026-02-07 19:26:46,833 - INFO - poller.poller - [WS #549] Flushed 5 positions (total: 105447)
+2026-02-07 19:26:51,839 - INFO - poller.poller - [WS #550] Flushed 1 positions (total: 105448)
+2026-02-07 19:26:59,986 - INFO - poller.poller - [Poll #402] Fetched 179 routes
+2026-02-07 19:27:11,861 - INFO - poller.poller - [WS #551] Flushed 10 positions (total: 105458)
+2026-02-07 19:27:16,867 - INFO - poller.poller - [WS #552] Flushed 19 positions (total: 105477)
+2026-02-07 19:27:31,349 - INFO - poller.poller - [Poll #404] Fetched 179 routes
+2026-02-07 19:27:36,882 - INFO - poller.poller - [WS #553] Flushed 4 positions (total: 105481)
+2026-02-07 19:27:45,635 - INFO - poller.poller - Stats: polls=404 failed=0 positions=105481 flushes=553 queue=5 dedup=54 uptime=6420.3s
+2026-02-07 19:27:46,891 - INFO - poller.poller - [WS #554] Flushed 5 positions (total: 105486)
+2026-02-07 19:27:51,898 - INFO - poller.poller - [WS #555] Flushed 5 positions (total: 105491)
+2026-02-07 19:28:02,965 - INFO - poller.poller - [Poll #406] Fetched 179 routes
+2026-02-07 19:28:07,317 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:28:12,318 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:28:12,554 - INFO - poller.websocket_client - Got session ID: nRsE8-Iq1CKbRRAZJMey... (ping: 25s)
+2026-02-07 19:28:12,939 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:28:13,163 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:28:13,164 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:28:16,934 - INFO - poller.poller - [WS #556] Flushed 2168 positions (total: 107659)
+2026-02-07 19:28:35,118 - INFO - poller.poller - [Poll #408] Fetched 179 routes
+2026-02-07 19:28:41,957 - INFO - poller.poller - [WS #557] Flushed 16 positions (total: 107675)
+2026-02-07 19:28:45,637 - INFO - poller.poller - Stats: polls=408 failed=0 positions=107675 flushes=557 queue=2 dedup=2191 uptime=6480.3s
+2026-02-07 19:28:46,960 - INFO - poller.poller - [WS #558] Flushed 2 positions (total: 107677)
+2026-02-07 19:29:07,024 - INFO - poller.poller - [Poll #410] Fetched 179 routes
+2026-02-07 19:29:11,981 - INFO - poller.poller - [WS #559] Flushed 22 positions (total: 107699)
+2026-02-07 19:29:16,987 - INFO - poller.poller - [WS #560] Flushed 4 positions (total: 107703)
+2026-02-07 19:29:38,207 - INFO - poller.poller - [Poll #412] Fetched 179 routes
+2026-02-07 19:29:38,310 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:29:43,312 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:29:43,580 - INFO - poller.websocket_client - Got session ID: 5XRKMzYr6X20hiO1JMfO... (ping: 25s)
+2026-02-07 19:29:43,969 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:29:44,215 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:29:44,215 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:29:45,638 - INFO - poller.poller - Stats: polls=412 failed=0 positions=107703 flushes=560 queue=2161 dedup=2189 uptime=6540.3s
+2026-02-07 19:29:47,023 - INFO - poller.poller - [WS #561] Flushed 2161 positions (total: 109864)
+2026-02-07 19:30:07,042 - INFO - poller.poller - [WS #562] Flushed 4 positions (total: 109868)
+2026-02-07 19:30:10,105 - INFO - poller.poller - [Poll #414] Fetched 179 routes
+2026-02-07 19:30:12,044 - INFO - poller.poller - [WS #563] Flushed 19 positions (total: 109887)
+2026-02-07 19:30:41,702 - INFO - poller.poller - [Poll #416] Fetched 179 routes
+2026-02-07 19:30:42,071 - INFO - poller.poller - [WS #564] Flushed 14 positions (total: 109901)
+2026-02-07 19:30:45,640 - INFO - poller.poller - Stats: polls=416 failed=0 positions=109901 flushes=564 queue=0 dedup=2198 uptime=6600.3s
+2026-02-07 19:31:02,090 - INFO - poller.poller - [WS #565] Flushed 13 positions (total: 109914)
+2026-02-07 19:31:07,099 - INFO - poller.poller - [WS #566] Flushed 1 positions (total: 109915)
+2026-02-07 19:31:12,102 - INFO - poller.poller - [WS #567] Flushed 16 positions (total: 109931)
+2026-02-07 19:31:13,150 - INFO - poller.poller - [Poll #418] Fetched 179 routes
+2026-02-07 19:31:17,108 - INFO - poller.poller - [WS #568] Flushed 7 positions (total: 109938)
+2026-02-07 19:31:27,117 - INFO - poller.poller - [WS #569] Flushed 5 positions (total: 109943)
+2026-02-07 19:31:33,279 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:31:38,281 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:31:39,670 - INFO - poller.websocket_client - Got session ID: BJXk4JlefVE9qN5OJMfq... (ping: 25s)
+2026-02-07 19:31:40,053 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:31:40,679 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:31:40,680 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:31:42,134 - INFO - poller.poller - [WS #570] Flushed 2144 positions (total: 112087)
+2026-02-07 19:31:44,710 - INFO - poller.poller - [Poll #420] Fetched 179 routes
+2026-02-07 19:31:45,643 - INFO - poller.poller - Stats: polls=420 failed=0 positions=112087 flushes=570 queue=10 dedup=2210 uptime=6660.3s
+2026-02-07 19:31:47,138 - INFO - poller.poller - [WS #571] Flushed 10 positions (total: 112097)
+2026-02-07 19:31:57,150 - INFO - poller.poller - [WS #572] Flushed 1 positions (total: 112098)
+2026-02-07 19:32:07,161 - INFO - poller.poller - [WS #573] Flushed 6 positions (total: 112104)
+2026-02-07 19:32:12,164 - INFO - poller.poller - [WS #574] Flushed 15 positions (total: 112119)
+2026-02-07 19:32:17,212 - INFO - poller.poller - [Poll #422] Fetched 179 routes
+2026-02-07 19:32:22,175 - INFO - poller.poller - [WS #575] Flushed 3 positions (total: 112122)
+2026-02-07 19:32:42,197 - INFO - poller.poller - [WS #576] Flushed 19 positions (total: 112141)
+2026-02-07 19:32:45,645 - INFO - poller.poller - Stats: polls=422 failed=0 positions=112141 flushes=576 queue=7 dedup=2205 uptime=6720.3s
+2026-02-07 19:32:47,201 - INFO - poller.poller - [WS #577] Flushed 7 positions (total: 112148)
+2026-02-07 19:32:49,842 - INFO - poller.poller - [Poll #424] Fetched 179 routes
+2026-02-07 19:33:04,456 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:33:09,459 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:33:10,701 - INFO - poller.websocket_client - Got session ID: dq-rfbu67Z56cbDoJMgE... (ping: 25s)
+2026-02-07 19:33:11,075 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:33:11,297 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:33:11,298 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:33:12,505 - INFO - poller.poller - [WS #578] Flushed 2154 positions (total: 114302)
+2026-02-07 19:33:21,268 - INFO - poller.poller - [Poll #426] Fetched 179 routes
+2026-02-07 19:33:22,517 - INFO - poller.poller - [WS #579] Flushed 14 positions (total: 114316)
+2026-02-07 19:33:42,538 - INFO - poller.poller - [WS #580] Flushed 10 positions (total: 114326)
+2026-02-07 19:33:45,649 - INFO - poller.poller - Stats: polls=426 failed=0 positions=114326 flushes=580 queue=2 dedup=2187 uptime=6780.3s
+2026-02-07 19:33:47,546 - INFO - poller.poller - [WS #581] Flushed 2 positions (total: 114328)
+2026-02-07 19:33:52,549 - INFO - poller.poller - [WS #582] Flushed 4 positions (total: 114332)
+2026-02-07 19:33:54,104 - INFO - poller.poller - [Poll #428] Fetched 179 routes
+2026-02-07 19:34:07,564 - INFO - poller.poller - [WS #583] Flushed 9 positions (total: 114341)
+2026-02-07 19:34:12,569 - INFO - poller.poller - [WS #584] Flushed 6 positions (total: 114347)
+2026-02-07 19:34:22,582 - INFO - poller.poller - [WS #585] Flushed 5 positions (total: 114352)
+2026-02-07 19:34:25,577 - INFO - poller.poller - [Poll #430] Fetched 179 routes
+2026-02-07 19:34:27,586 - INFO - poller.poller - [WS #586] Flushed 3 positions (total: 114355)
+2026-02-07 19:34:37,596 - INFO - poller.poller - [WS #587] Flushed 2 positions (total: 114357)
+2026-02-07 19:34:42,601 - INFO - poller.poller - [WS #588] Flushed 20 positions (total: 114377)
+2026-02-07 19:34:45,653 - INFO - poller.poller - Stats: polls=430 failed=0 positions=114377 flushes=588 queue=0 dedup=75 uptime=6840.3s
+2026-02-07 19:34:47,604 - INFO - poller.poller - [WS #589] Flushed 2 positions (total: 114379)
+2026-02-07 19:34:57,394 - INFO - poller.poller - [Poll #432] Fetched 179 routes
+2026-02-07 19:35:12,624 - INFO - poller.poller - [WS #590] Flushed 9 positions (total: 114388)
+2026-02-07 19:35:17,628 - INFO - poller.poller - [WS #591] Flushed 10 positions (total: 114398)
+2026-02-07 19:35:22,634 - INFO - poller.poller - [WS #592] Flushed 3 positions (total: 114401)
+2026-02-07 19:35:32,732 - INFO - poller.poller - [Poll #434] Fetched 179 routes
+2026-02-07 19:35:35,240 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:35:40,244 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:35:40,490 - INFO - poller.websocket_client - Got session ID: zfrMdf6dC20jFl9tJMgk... (ping: 25s)
+2026-02-07 19:35:40,897 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:35:41,123 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:35:41,124 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:35:42,656 - INFO - poller.poller - [WS #593] Flushed 2158 positions (total: 116559)
+2026-02-07 19:35:45,657 - INFO - poller.poller - Stats: polls=434 failed=0 positions=116559 flushes=593 queue=11 dedup=2193 uptime=6900.3s
+2026-02-07 19:35:47,662 - INFO - poller.poller - [WS #594] Flushed 11 positions (total: 116570)
+2026-02-07 19:36:04,347 - INFO - poller.poller - [Poll #436] Fetched 179 routes
+2026-02-07 19:36:07,681 - INFO - poller.poller - [WS #595] Flushed 8 positions (total: 116578)
+2026-02-07 19:36:12,685 - INFO - poller.poller - [WS #596] Flushed 10 positions (total: 116588)
+2026-02-07 19:36:22,695 - INFO - poller.poller - [WS #597] Flushed 3 positions (total: 116591)
+2026-02-07 19:36:27,702 - INFO - poller.poller - [WS #598] Flushed 3 positions (total: 116594)
+2026-02-07 19:36:35,508 - INFO - poller.poller - [Poll #438] Fetched 179 routes
+2026-02-07 19:36:37,712 - INFO - poller.poller - [WS #599] Flushed 4 positions (total: 116598)
+2026-02-07 19:36:42,719 - INFO - poller.poller - [WS #600] Flushed 10 positions (total: 116608)
+2026-02-07 19:36:45,661 - INFO - poller.poller - Stats: polls=438 failed=0 positions=116608 flushes=600 queue=0 dedup=2220 uptime=6960.3s
+2026-02-07 19:36:47,724 - INFO - poller.poller - [WS #601] Flushed 6 positions (total: 116614)
+2026-02-07 19:36:52,729 - INFO - poller.poller - [WS #602] Flushed 4 positions (total: 116618)
+2026-02-07 19:37:05,830 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:37:07,249 - INFO - poller.poller - [Poll #440] Fetched 179 routes
+2026-02-07 19:37:10,834 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:37:11,164 - INFO - poller.websocket_client - Got session ID: GUbMshrNPTwnDBphJMg5... (ping: 25s)
+2026-02-07 19:37:11,666 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:37:11,989 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:37:11,990 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:37:17,754 - INFO - poller.poller - [WS #603] Flushed 2153 positions (total: 118771)
+2026-02-07 19:37:22,757 - INFO - poller.poller - [WS #604] Flushed 1 positions (total: 118772)
+2026-02-07 19:37:37,770 - INFO - poller.poller - [WS #605] Flushed 7 positions (total: 118779)
+2026-02-07 19:37:38,579 - INFO - poller.poller - [Poll #442] Fetched 179 routes
+2026-02-07 19:37:42,778 - INFO - poller.poller - [WS #606] Flushed 13 positions (total: 118792)
+2026-02-07 19:37:45,665 - INFO - poller.poller - Stats: polls=442 failed=0 positions=118792 flushes=606 queue=8 dedup=2209 uptime=7020.4s
+2026-02-07 19:37:47,784 - INFO - poller.poller - [WS #607] Flushed 8 positions (total: 118800)
+2026-02-07 19:38:02,799 - INFO - poller.poller - [WS #608] Flushed 3 positions (total: 118803)
+2026-02-07 19:38:07,804 - INFO - poller.poller - [WS #609] Flushed 10 positions (total: 118813)
+2026-02-07 19:38:10,572 - INFO - poller.poller - [Poll #444] Fetched 179 routes
+2026-02-07 19:38:12,809 - INFO - poller.poller - [WS #610] Flushed 12 positions (total: 118825)
+2026-02-07 19:38:37,832 - INFO - poller.poller - [WS #611] Flushed 1 positions (total: 118826)
+2026-02-07 19:38:42,170 - INFO - poller.poller - [Poll #446] Fetched 179 routes
+2026-02-07 19:38:42,836 - INFO - poller.poller - [WS #612] Flushed 13 positions (total: 118839)
+2026-02-07 19:38:45,668 - INFO - poller.poller - Stats: polls=446 failed=0 positions=118839 flushes=612 queue=0 dedup=60 uptime=7080.4s
+2026-02-07 19:38:52,845 - INFO - poller.poller - [WS #613] Flushed 14 positions (total: 118853)
+2026-02-07 19:39:04,511 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:39:09,514 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:39:11,445 - INFO - poller.websocket_client - Got session ID: 6VmZS4qU73SOs00uJMhY... (ping: 25s)
+2026-02-07 19:39:11,838 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:39:12,078 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:39:12,078 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:39:13,127 - INFO - poller.poller - [WS #614] Flushed 2157 positions (total: 121010)
+2026-02-07 19:39:13,740 - INFO - poller.poller - [Poll #448] Fetched 179 routes
+2026-02-07 19:39:18,134 - INFO - poller.poller - [WS #615] Flushed 16 positions (total: 121026)
+2026-02-07 19:39:38,150 - INFO - poller.poller - [WS #616] Flushed 11 positions (total: 121037)
+2026-02-07 19:39:43,153 - INFO - poller.poller - [WS #617] Flushed 9 positions (total: 121046)
+2026-02-07 19:39:44,945 - INFO - poller.poller - [Poll #450] Fetched 179 routes
+2026-02-07 19:39:45,670 - INFO - poller.poller - Stats: polls=450 failed=0 positions=121046 flushes=617 queue=0 dedup=2207 uptime=7140.4s
+2026-02-07 19:40:08,173 - INFO - poller.poller - [WS #618] Flushed 3 positions (total: 121049)
+2026-02-07 19:40:13,176 - INFO - poller.poller - [WS #619] Flushed 20 positions (total: 121069)
+2026-02-07 19:40:16,224 - INFO - poller.poller - [Poll #452] Fetched 179 routes
+2026-02-07 19:40:38,197 - INFO - poller.poller - [WS #620] Flushed 3 positions (total: 121072)
+2026-02-07 19:40:43,201 - INFO - poller.poller - [WS #621] Flushed 17 positions (total: 121089)
+2026-02-07 19:40:45,674 - INFO - poller.poller - Stats: polls=452 failed=0 positions=121089 flushes=621 queue=0 dedup=63 uptime=7200.4s
+2026-02-07 19:40:47,556 - INFO - poller.poller - [Poll #454] Fetched 179 routes
+2026-02-07 19:41:08,220 - INFO - poller.poller - [WS #622] Flushed 2 positions (total: 121091)
+2026-02-07 19:41:13,226 - INFO - poller.poller - [WS #623] Flushed 17 positions (total: 121108)
+2026-02-07 19:41:18,228 - INFO - poller.poller - [WS #624] Flushed 5 positions (total: 121113)
+2026-02-07 19:41:18,873 - INFO - poller.poller - [Poll #456] Fetched 179 routes
+2026-02-07 19:41:35,229 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:41:40,232 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:41:41,682 - INFO - poller.websocket_client - Got session ID: K9siXvkHp7nAZCR-JMiB... (ping: 25s)
+2026-02-07 19:41:42,361 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:41:42,629 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:41:42,629 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:41:45,676 - INFO - poller.poller - Stats: polls=456 failed=0 positions=121113 flushes=624 queue=2163 dedup=2187 uptime=7260.4s
+2026-02-07 19:41:48,259 - INFO - poller.poller - [WS #625] Flushed 2163 positions (total: 123276)
+2026-02-07 19:41:50,485 - INFO - poller.poller - [Poll #458] Fetched 179 routes
+2026-02-07 19:42:08,273 - INFO - poller.poller - [WS #626] Flushed 4 positions (total: 123280)
+2026-02-07 19:42:13,276 - INFO - poller.poller - [WS #627] Flushed 6 positions (total: 123286)
+2026-02-07 19:42:21,795 - INFO - poller.poller - [Poll #460] Fetched 179 routes
+2026-02-07 19:42:23,285 - INFO - poller.poller - [WS #628] Flushed 5 positions (total: 123291)
+2026-02-07 19:42:28,294 - INFO - poller.poller - [WS #629] Flushed 2 positions (total: 123293)
+2026-02-07 19:42:38,302 - INFO - poller.poller - [WS #630] Flushed 2 positions (total: 123295)
+2026-02-07 19:42:43,306 - INFO - poller.poller - [WS #631] Flushed 12 positions (total: 123307)
+2026-02-07 19:42:45,679 - INFO - poller.poller - Stats: polls=460 failed=0 positions=123307 flushes=631 queue=0 dedup=2194 uptime=7320.4s
+2026-02-07 19:42:53,602 - INFO - poller.poller - [Poll #462] Fetched 179 routes
+2026-02-07 19:43:08,328 - INFO - poller.poller - [WS #632] Flushed 1 positions (total: 123308)
+2026-02-07 19:43:13,334 - INFO - poller.poller - [WS #633] Flushed 17 positions (total: 123325)
+2026-02-07 19:43:25,388 - INFO - poller.poller - [Poll #464] Fetched 179 routes
+2026-02-07 19:43:35,215 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:43:40,218 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:43:40,462 - INFO - poller.websocket_client - Got session ID: Jo56-RlM3zL-B8KIJMik... (ping: 25s)
+2026-02-07 19:43:40,849 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:43:41,078 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:43:41,078 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:43:43,363 - INFO - poller.poller - [WS #634] Flushed 2147 positions (total: 125472)
+2026-02-07 19:43:45,683 - INFO - poller.poller - Stats: polls=464 failed=0 positions=125472 flushes=634 queue=8 dedup=2173 uptime=7380.4s
+2026-02-07 19:43:48,369 - INFO - poller.poller - [WS #635] Flushed 8 positions (total: 125480)
+2026-02-07 19:43:56,629 - INFO - poller.poller - [Poll #466] Fetched 179 routes
+2026-02-07 19:44:08,386 - INFO - poller.poller - [WS #636] Flushed 12 positions (total: 125492)
+2026-02-07 19:44:13,390 - INFO - poller.poller - [WS #637] Flushed 13 positions (total: 125505)
+2026-02-07 19:44:27,892 - INFO - poller.poller - [Poll #468] Fetched 179 routes
+2026-02-07 19:44:38,411 - INFO - poller.poller - [WS #638] Flushed 8 positions (total: 125513)
+2026-02-07 19:44:43,415 - INFO - poller.poller - [WS #639] Flushed 15 positions (total: 125528)
+2026-02-07 19:44:45,686 - INFO - poller.poller - Stats: polls=468 failed=0 positions=125528 flushes=639 queue=0 dedup=2203 uptime=7440.4s
+2026-02-07 19:44:59,123 - INFO - poller.poller - [Poll #470] Fetched 179 routes
+2026-02-07 19:45:06,947 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:45:11,951 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:45:12,201 - INFO - poller.websocket_client - Got session ID: ISdDgDbpDi5Cuno4JMi2... (ping: 25s)
+2026-02-07 19:45:13,449 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:45:13,686 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:45:13,687 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:45:18,446 - INFO - poller.poller - [WS #640] Flushed 2153 positions (total: 127681)
+2026-02-07 19:45:23,451 - INFO - poller.poller - [WS #641] Flushed 7 positions (total: 127688)
+2026-02-07 19:45:30,415 - INFO - poller.poller - [Poll #472] Fetched 179 routes
+2026-02-07 19:45:43,470 - INFO - poller.poller - [WS #642] Flushed 23 positions (total: 127711)
+2026-02-07 19:45:45,687 - INFO - poller.poller - Stats: polls=472 failed=0 positions=127711 flushes=642 queue=0 dedup=2206 uptime=7500.4s
+2026-02-07 19:45:48,475 - INFO - poller.poller - [WS #643] Flushed 3 positions (total: 127714)
+2026-02-07 19:46:02,916 - INFO - poller.poller - [Poll #474] Fetched 179 routes
+2026-02-07 19:46:13,498 - INFO - poller.poller - [WS #644] Flushed 17 positions (total: 127731)
+2026-02-07 19:46:18,505 - INFO - poller.poller - [WS #645] Flushed 7 positions (total: 127738)
+2026-02-07 19:46:34,463 - INFO - poller.poller - [Poll #476] Fetched 179 routes
+2026-02-07 19:46:43,530 - INFO - poller.poller - [WS #646] Flushed 17 positions (total: 127755)
+2026-02-07 19:46:45,690 - INFO - poller.poller - Stats: polls=476 failed=0 positions=127755 flushes=646 queue=0 dedup=67 uptime=7560.4s
+2026-02-07 19:46:53,542 - INFO - poller.poller - [WS #647] Flushed 5 positions (total: 127760)
+2026-02-07 19:47:05,801 - INFO - poller.poller - [Poll #478] Fetched 179 routes
+2026-02-07 19:47:08,558 - INFO - poller.poller - [WS #648] Flushed 8 positions (total: 127768)
+2026-02-07 19:47:13,562 - INFO - poller.poller - [WS #649] Flushed 10 positions (total: 127778)
+2026-02-07 19:47:23,568 - INFO - poller.poller - [WS #650] Flushed 3 positions (total: 127781)
+2026-02-07 19:47:36,481 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:47:37,195 - INFO - poller.poller - [Poll #480] Fetched 179 routes
+2026-02-07 19:47:41,485 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:47:41,749 - INFO - poller.websocket_client - Got session ID: dnBOZIG-ESSeRIyxJMjt... (ping: 25s)
+2026-02-07 19:47:42,228 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:47:42,484 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:47:42,484 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:47:43,584 - INFO - poller.poller - [WS #651] Flushed 2158 positions (total: 129939)
+2026-02-07 19:47:45,694 - INFO - poller.poller - Stats: polls=480 failed=0 positions=129939 flushes=651 queue=4 dedup=2188 uptime=7620.4s
+2026-02-07 19:47:48,589 - INFO - poller.poller - [WS #652] Flushed 4 positions (total: 129943)
+2026-02-07 19:48:08,407 - INFO - poller.poller - [Poll #482] Fetched 179 routes
+2026-02-07 19:48:13,612 - INFO - poller.poller - [WS #653] Flushed 14 positions (total: 129957)
+2026-02-07 19:48:18,619 - INFO - poller.poller - [WS #654] Flushed 13 positions (total: 129970)
+2026-02-07 19:48:38,638 - INFO - poller.poller - [WS #655] Flushed 13 positions (total: 129983)
+2026-02-07 19:48:39,549 - INFO - poller.poller - [Poll #484] Fetched 179 routes
+2026-02-07 19:48:43,642 - INFO - poller.poller - [WS #656] Flushed 8 positions (total: 129991)
+2026-02-07 19:48:45,697 - INFO - poller.poller - Stats: polls=484 failed=0 positions=129991 flushes=656 queue=0 dedup=2213 uptime=7680.4s
+2026-02-07 19:49:08,666 - INFO - poller.poller - [WS #657] Flushed 3 positions (total: 129994)
+2026-02-07 19:49:10,866 - INFO - poller.poller - [Poll #486] Fetched 179 routes
+2026-02-07 19:49:13,671 - INFO - poller.poller - [WS #658] Flushed 15 positions (total: 130009)
+2026-02-07 19:49:18,676 - INFO - poller.poller - [WS #659] Flushed 4 positions (total: 130013)
+2026-02-07 19:49:36,351 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:49:41,353 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:49:42,618 - INFO - poller.websocket_client - Got session ID: ilSDl_50uKTvwR8qJMkX... (ping: 25s)
+2026-02-07 19:49:43,051 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:49:43,310 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:49:43,310 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:49:45,700 - INFO - poller.poller - Stats: polls=487 failed=0 positions=130013 flushes=659 queue=2173 dedup=2195 uptime=7740.4s
+2026-02-07 19:49:45,897 - INFO - poller.poller - [Poll #488] Fetched 179 routes
+2026-02-07 19:49:48,717 - INFO - poller.poller - [WS #660] Flushed 2173 positions (total: 132186)
+2026-02-07 19:50:13,741 - INFO - poller.poller - [WS #661] Flushed 16 positions (total: 132202)
+2026-02-07 19:50:17,442 - INFO - poller.poller - [Poll #490] Fetched 179 routes
+2026-02-07 19:50:18,745 - INFO - poller.poller - [WS #662] Flushed 2 positions (total: 132204)
+2026-02-07 19:50:43,768 - INFO - poller.poller - [WS #663] Flushed 14 positions (total: 132218)
+2026-02-07 19:50:45,703 - INFO - poller.poller - Stats: polls=490 failed=0 positions=132218 flushes=663 queue=3 dedup=2212 uptime=7800.4s
+2026-02-07 19:50:48,670 - INFO - poller.poller - [Poll #492] Fetched 179 routes
+2026-02-07 19:50:48,771 - INFO - poller.poller - [WS #664] Flushed 3 positions (total: 132221)
+2026-02-07 19:51:08,791 - INFO - poller.poller - [WS #665] Flushed 15 positions (total: 132236)
+2026-02-07 19:51:13,793 - INFO - poller.poller - [WS #666] Flushed 10 positions (total: 132246)
+2026-02-07 19:51:20,230 - INFO - poller.poller - [Poll #494] Fetched 179 routes
+2026-02-07 19:51:38,817 - INFO - poller.poller - [WS #667] Flushed 10 positions (total: 132256)
+2026-02-07 19:51:43,821 - INFO - poller.poller - [WS #668] Flushed 9 positions (total: 132265)
+2026-02-07 19:51:45,707 - INFO - poller.poller - Stats: polls=494 failed=0 positions=132265 flushes=668 queue=0 dedup=47 uptime=7860.4s
+2026-02-07 19:51:51,588 - INFO - poller.poller - [Poll #496] Fetched 179 routes
+2026-02-07 19:52:02,833 - INFO - poller.poller - Received shutdown signal
+2026-02-07 19:52:36,386 - INFO - poller.websocket_client - WS connection lost, reconnecting in 5s
+2026-02-07 19:52:41,392 - INFO - poller.websocket_client - Socket.IO handshake: https://online.kpt.kyiv.ua/socket.io/?EIO=3&transport=polling
+2026-02-07 19:52:43,476 - INFO - poller.websocket_client - Got session ID: 7_n3GkHzID2n2ZYRJMlF... (ping: 25s)
+2026-02-07 19:52:43,904 - INFO - poller.websocket_client - WebSocket connected, sending upgrade probe...
+2026-02-07 19:52:44,167 - INFO - poller.websocket_client - Received probe response, completing upgrade...
+2026-02-07 19:52:44,168 - INFO - poller.websocket_client - WebSocket upgrade complete
+2026-02-07 19:52:45,709 - INFO - poller.poller - Stats: polls=496 failed=0 positions=132265 flushes=668 queue=2184 dedup=2184 uptime=7920.4s
+2026-02-07 19:52:45,709 - INFO - poller.websocket_client - WebSocket closed: 256
+2026-02-07 19:52:45,982 - INFO - poller.websocket_client - WebSocket client stopped (total positions: 134449)
+2026-02-07 19:52:46,000 - INFO - poller.poller - Flushed 2184 remaining positions on shutdown
+2026-02-07 19:52:46,004 - INFO - poller.poller - Final: polls=496 failed=0 positions=132265 flushes=668
