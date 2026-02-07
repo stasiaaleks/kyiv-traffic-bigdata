@@ -1,15 +1,14 @@
 from __future__ import annotations
 
+import asyncio
 import logging
-from contextlib import contextmanager
-from dataclasses import dataclass, field
-from typing import TYPE_CHECKING, Any, Iterator
+from typing import TYPE_CHECKING, Any
 
-import requests
-from cloudflare import CloudflareBypasser
+import aiohttp
+from aiohttp_socks import ProxyConnector
 
 if TYPE_CHECKING:
-    from config import BrowserConfig
+    from .config import ProxyConfig
 
 logger = logging.getLogger(__name__)
 
@@ -25,120 +24,92 @@ class CookiesExpiredError(HTTPError):
         super().__init__(403, "Cookies expired")
 
 
-@dataclass
-class SessionCredentials:
-    cookies: dict[str, str] = field(default_factory=dict)
-    user_agent: str = ""
+class AsyncHTTPSession:
+    def __init__(self, proxy_config: ProxyConfig) -> None:
+        self._proxy_config = proxy_config
+        self._session: aiohttp.ClientSession | None = None
+        self._session_lock = asyncio.Lock()
 
-    @property
-    def is_valid(self) -> bool:
-        return bool(self.cookies and self.user_agent)
+    def _create_connector(self) -> aiohttp.BaseConnector:
+        if self._proxy_config.socks_proxy:
+            return ProxyConnector.from_url(self._proxy_config.socks_proxy)
+        return aiohttp.TCPConnector()
 
+    def _get_proxy_url(self) -> str | None:
+        if self._proxy_config.http_proxy and not self._proxy_config.socks_proxy:
+            return self._proxy_config.http_proxy
+        return None
 
-class RequestsSessionWrapper:
-    def __init__(self) -> None:
-        self._session = requests.Session()
-        self._credentials = SessionCredentials()
+    async def _ensure_session(self) -> aiohttp.ClientSession:
+        if self._session is None or self._session.closed:
+            connector = self._create_connector()
+            self._session = aiohttp.ClientSession(connector=connector)
+        return self._session
 
-    def update_credentials(self, credentials: SessionCredentials) -> None:
-        self._credentials = credentials
-        self._session.cookies.clear()
-
-        for name, value in credentials.cookies.items():
-            self._session.cookies.set(name, value)
-
-        self._session.headers.update({"User-Agent": credentials.user_agent})
-
-    def get_json(self, url: str, timeout: int = 30) -> list[dict[str, Any]] | None:
-        try:
-            response = self._session.get(url, timeout=timeout)
-
-            if response.status_code == 403:
-                logger.warning("Got 403 - cookies expired, need refresh")
-                raise CookiesExpiredError()
-
-            if response.status_code != 200:
-                logger.warning(f"HTTP {response.status_code} from {url}")
-                return None
-
-            return response.json()
-
-        except requests.exceptions.JSONDecodeError as e:
-            logger.warning(f"Invalid JSON: {e}")
-            return None
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Request error: {e}")
-            return None
-
-    @property
-    def cookies(self) -> dict[str, str]:
-        return self._credentials.cookies
-
-    @property
-    def user_agent(self) -> str:
-        return self._credentials.user_agent
-
-
-class CookieSession:
-    def __init__(self, browser_config: BrowserConfig, kpt_url: str) -> None:
-        self._browser_config = browser_config
-        self._kpt_url = kpt_url
-        self._session = RequestsSessionWrapper()
-        self._bypasser: CloudflareBypasser | None = None
-
-    def _get_bypasser(self) -> CloudflareBypasser:
-        if self._bypasser is None:
-            self._bypasser = CloudflareBypasser(self._browser_config, self._kpt_url)
-        return self._bypasser
-
-    def refresh_cookies(self) -> bool:
-        logger.info("Refreshing Cloudflare cookies...")
-        bypasser = self._get_bypasser()
+    async def get_json(self, url: str, timeout: int = 30) -> dict | list | None:
+        session = await self._ensure_session()
+        proxy = self._get_proxy_url()
 
         try:
-            bypasser.start_browser()
+            async with session.get(
+                url, timeout=aiohttp.ClientTimeout(total=timeout), proxy=proxy
+            ) as response:
+                if response.status == 403:
+                    raise CookiesExpiredError()
 
-            if not bypasser.bypass():
-                return False
+                if response.status in (502, 503, 504):
+                    logger.warning(f"Server error HTTP {response.status} from {url}")
+                    return None
 
-            credentials = SessionCredentials(
-                cookies=bypasser.extract_cookies(),
-                user_agent=bypasser.get_user_agent(),
-            )
+                if response.status != 200:
+                    logger.warning(f"HTTP {response.status} from {url}")
+                    return None
 
-            self._session.update_credentials(credentials)
-            logger.info("Cookie refresh complete")
-            return True
+                return await response.json()
 
-        finally:
-            bypasser.stop_browser()
-
-    def fetch(self, url: str) -> list[dict[str, Any]] | None:
-        try:
-            return self._session.get_json(url)
         except CookiesExpiredError:
+            raise
+        except aiohttp.ContentTypeError as e:
+            logger.warning(f"Invalid JSON response from {url}: {e}")
+            return None
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
+            logger.warning(f"Connection error for {url}: {e}")
             return None
 
-    @property
-    def cookies(self) -> dict[str, str]:
-        return self._session.cookies
+    async def get_text(self, url: str, timeout: int = 30) -> str | None:
+        session = await self._ensure_session()
+        proxy = self._get_proxy_url()
 
-    @property
-    def user_agent(self) -> str:
-        return self._session.user_agent
+        try:
+            async with session.get(
+                url, timeout=aiohttp.ClientTimeout(total=timeout), proxy=proxy
+            ) as response:
+                if response.status == 403:
+                    raise CookiesExpiredError()
 
-    def close(self) -> None:
-        if self._bypasser:
-            self._bypasser.stop_browser()
-            self._bypasser = None
+                if response.status != 200:
+                    logger.warning(f"HTTP {response.status} from {url}")
+                    return None
 
+                return await response.text()
 
-@contextmanager
-def cookie_session_context(
-    browser_config: BrowserConfig, kpt_url: str
-) -> Iterator[CookieSession]:
-    session = CookieSession(browser_config, kpt_url)
-    try:
-        yield session
-    finally:
-        session.close()
+        except CookiesExpiredError:
+            raise
+        except (aiohttp.ClientError, asyncio.TimeoutError) as e:
+            logger.warning(f"Connection error for {url}: {e}")
+            return None
+
+    async def refresh_session(self) -> None:
+        async with self._session_lock:
+            if self._session and not self._session.closed:
+                await self._session.close()
+            self._session = None
+            logger.info("Session refreshed")
+
+    async def __aenter__(self) -> AsyncHTTPSession:
+        await self._ensure_session()
+        return self
+
+    async def __aexit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
+        if self._session and not self._session.closed:
+            await self._session.close()

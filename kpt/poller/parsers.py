@@ -5,10 +5,10 @@ import json
 import re
 from typing import TYPE_CHECKING, Any
 
-from models import VehiclePosition
+from .models import VehiclePosition
 
 if TYPE_CHECKING:
-    from config import KyivCoordinateBounds
+    from .config import KyivCoordinateBounds
 
 # Pre-compiled regex for Socket.IO event messages
 SOCKET_IO_EVENT_PATTERN = re.compile(r'^42\["(\w+)",(.*)]\s*$', re.DOTALL)

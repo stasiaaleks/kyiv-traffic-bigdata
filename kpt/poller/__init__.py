@@ -1,5 +1,4 @@
-from config import PollerConfig
-
-from poller import KPTPoller
+from .config import PollerConfig
+from .poller import KPTPoller
 
 __all__ = ["PollerConfig", "KPTPoller"]

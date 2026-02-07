@@ -1,267 +1,254 @@
 from __future__ import annotations
 
+import asyncio
 import logging
+import signal
 import time
-from contextlib import ExitStack, contextmanager
-from dataclasses import dataclass, field
 from datetime import datetime
-from queue import Empty, Queue
-from typing import TYPE_CHECKING, Iterator
 
-from config import PollerConfig
-from models import PollerStats, RouteRecord, VehiclePosition
-from session import CookieSession
-from websocket_client import WebSocketClient
-from writer import StreamWriter
-
-if TYPE_CHECKING:
-    pass
+from .config import PollerConfig
+from .models import PollerStats, RouteRecord
+from .session import AsyncHTTPSession, CookiesExpiredError
+from .websocket_client import (
+    AsyncWebSocketClient,
+    ConcurrentFileQueue,
+    DeduplicationFilter,
+)
+from .writer import StreamWriter
 
 logger = logging.getLogger(__name__)
 
 
-def drain_queue(queue: Queue[VehiclePosition]) -> list[VehiclePosition]:
-    positions: list[VehiclePosition] = []
-    while True:
-        try:
-            pos = queue.get_nowait()
-            positions.append(pos)
-        except Empty:
-            break
-    return positions
-
-
-@dataclass
-class TimingController:
-    poll_interval: float
-    flush_interval: float
-    _last_poll: float = field(default=0.0, init=False)
-    _last_flush: float = field(default=0.0, init=False)
-
-    def should_poll(self) -> bool:
-        return time.time() - self._last_poll >= self.poll_interval
-
-    def should_flush(self) -> bool:
-        return time.time() - self._last_flush >= self.flush_interval
-
-    def mark_polled(self) -> None:
-        self._last_poll = time.time()
-
-    def mark_flushed(self) -> None:
-        self._last_flush = time.time()
-
-
-class FailureTracker:
-    def __init__(self, max_failures: int = 3) -> None:
-        self.max_failures = max_failures
-        self._consecutive_failures = 0
-
-    def record_failure(self) -> None:
-        self._consecutive_failures += 1
-
-    def record_success(self) -> None:
-        self._consecutive_failures = 0
-
-    def should_refresh(self) -> bool:
-        return self._consecutive_failures >= self.max_failures
-
-    def reset(self) -> None:
-        self._consecutive_failures = 0
-
-
 class KPTPoller:
-    """
-    - Cookie session management
-    - WebSocket client for real-time positions
-    - REST API polling for routes
-    - Data persistence
-    """
-
     def __init__(self, config: PollerConfig) -> None:
         self.config = config
-        self._position_queue: Queue[VehiclePosition] = Queue()
         self._stats = PollerStats()
+        self._start_time = time.monotonic()
         self._running = False
 
-    def run(self) -> int:
+    async def run(self) -> None:
         self._log_config()
         self._running = True
+        backoff_delay = self.config.retry.base_delay
 
-        with ExitStack() as stack:
-            session = stack.enter_context(_session_context(self))
-            writer = stack.enter_context(_writer_context(self))
+        while self._running:
+            try:
+                async with AsyncHTTPSession(self.config.proxy) as session:
+                    await self._run_session(session)
 
-            if not session.refresh_cookies():
-                logger.error("Initial cookie acquisition failed")
-                return 1
+                backoff_delay = self.config.retry.base_delay
 
-            ws_client: WebSocketClient | None = None
-            if self.config.websocket.enabled:
-                ws_client = self._create_ws_client(session)
-                ws_client.start()
-                stack.callback(ws_client.stop)
-                time.sleep(3)  # Give WebSocket time to connect
+            except asyncio.CancelledError:
+                logger.info("Poller cancelled")
+                break
+            except Exception as e:
+                logger.exception(f"Poller error: {e}")
+                logger.info(f"Restarting in {backoff_delay}s...")
+                await asyncio.sleep(backoff_delay)
+                backoff_delay = min(backoff_delay * 2, self.config.retry.max_delay)
 
-            return self._run_loop(session, writer, ws_client)
+    async def _run_session(self, session: AsyncHTTPSession) -> None:
+        writer = StreamWriter(self.config.output)
+        position_queue = ConcurrentFileQueue(
+            self.config.output.output_dir, self.config.queue
+        )
+        dedup = DeduplicationFilter()
+
+        await self._recover_buffered_positions(position_queue, writer)
+
+        tasks, ws_client = await self._create_tasks(
+            session, writer, position_queue, dedup
+        )
+
+        try:
+            await asyncio.gather(*tasks)
+        except asyncio.CancelledError:
+            raise
+        finally:
+            await self._shutdown_tasks(tasks, ws_client, position_queue, writer)
+
+    async def _recover_buffered_positions(
+        self, queue: ConcurrentFileQueue, writer: StreamWriter
+    ) -> None:
+        recovered = await queue.recover()
+        if recovered:
+            await writer.write_positions([p.to_dict() for p in recovered])
+            logger.info(f"Wrote {len(recovered)} recovered positions")
+
+    async def _create_tasks(
+        self,
+        session: AsyncHTTPSession,
+        writer: StreamWriter,
+        position_queue: ConcurrentFileQueue,
+        dedup: DeduplicationFilter,
+    ) -> tuple[list[asyncio.Task[None]], AsyncWebSocketClient | None]:
+        tasks: list[asyncio.Task[None]] = []
+        ws_client: AsyncWebSocketClient | None = None
+
+        tasks.append(asyncio.create_task(self._poll_routes_loop(session, writer)))
+
+        if self.config.websocket.enabled:
+            ws_client = AsyncWebSocketClient(
+                http_session=session,
+                ws_config=self.config.websocket,
+                queue=position_queue,
+                dedup=dedup,
+                bounds=self.config.bounds,
+            )
+            await ws_client.start()
+
+            tasks.append(
+                asyncio.create_task(self._flush_positions_loop(position_queue, writer))
+            )
+
+        tasks.append(asyncio.create_task(self._stats_loop(position_queue, dedup)))
+
+        return tasks, ws_client
+
+    async def _shutdown_tasks(
+        self,
+        tasks: list[asyncio.Task[None]],
+        ws_client: AsyncWebSocketClient | None,
+        position_queue: ConcurrentFileQueue,
+        writer: StreamWriter,
+    ) -> None:
+        for task in tasks:
+            if not task.done():
+                task.cancel()
+        await asyncio.gather(*tasks, return_exceptions=True)
+
+        if ws_client is not None:
+            await ws_client.stop()
+
+        remaining = await position_queue.flush()
+        if remaining:
+            await writer.write_positions([p.to_dict() for p in remaining])
+            await position_queue.confirm_flush()
+            logger.info(f"Flushed {len(remaining)} remaining positions on shutdown")
+
+        await writer.close()
 
     def _log_config(self) -> None:
-        logger.info("KPT Poller (REST API + WebSocket)")
+        logger.info("KPT Poller (async, REST API + WebSocket)")
         for key, value in self.config.to_dict().items():
             logger.info(f"  {key}: {value}")
 
-    def _create_session(self) -> CookieSession:
-        return CookieSession(self.config.browser, self.config.api.kpt_url)
+    async def _poll_routes_loop(
+        self, session: AsyncHTTPSession, writer: StreamWriter
+    ) -> None:
+        consecutive_failures = 0
+        max_failures = self.config.api.max_consecutive_failures
 
-    def _create_ws_client(self, session: CookieSession) -> WebSocketClient:
-        return WebSocketClient(
-            base_url=self.config.websocket.base_url,
-            cookies=session.cookies,
-            user_agent=session.user_agent,
-            position_queue=self._position_queue,
-            bounds=self.config.bounds,
-            ping_interval=self.config.websocket.ping_interval,
-            reconnect_delay=self.config.websocket.reconnect_delay,
-        )
+        logger.info("Starting routes polling loop...")
 
-    def _create_writer(self) -> StreamWriter:
-        return StreamWriter(self.config.output)
+        while self._running:
+            self._stats.poll_count += 1
+            timestamp = datetime.now().isoformat()
+            url = self.config.api.routes_url
 
-    def _flush_positions(self, writer: StreamWriter) -> int:
-        positions = drain_queue(self._position_queue)
-        if not positions:
-            return 0
+            try:
+                routes = await session.get_json(url)
 
-        self._stats.record_position_flush(len(positions))
-        writer.write_positions([p.to_dict() for p in positions])
-        logger.info(
-            f"[WS #{self._stats.ws_flush_count}] Flushed {len(positions)} positions "
-            f"(total: {self._stats.total_positions})"
-        )
-        return len(positions)
+                if routes is None:
+                    consecutive_failures += 1
+                    self._stats.record_poll_failure()
+                    logger.warning(
+                        f"[Poll #{self._stats.poll_count}] Failed "
+                        f"({consecutive_failures}/{max_failures})"
+                    )
+                else:
+                    consecutive_failures = 0
+                    self._stats.record_poll_success()
 
-    def _poll_routes(
-        self,
-        session: CookieSession,
-        writer: StreamWriter,
-        failure_tracker: FailureTracker,
-    ) -> bool:
-        self._stats.poll_count += 1
-        timestamp = datetime.now().isoformat()
+                    record = RouteRecord(
+                        timestamp=timestamp,
+                        poll_number=self._stats.poll_count,
+                        routes=routes if isinstance(routes, list) else [routes],
+                    )
+                    await writer.write_route_record(record)
+                    logger.info(
+                        f"[Poll #{self._stats.poll_count}] Fetched {record.route_count} routes"
+                    )
 
-        routes = session.fetch(self.config.api.routes_url)
+            except CookiesExpiredError:
+                consecutive_failures += 1
+                self._stats.record_poll_failure()
+                logger.warning("Got 403 - refreshing session")
+                await session.refresh_session()
 
-        if routes is None:
-            failure_tracker.record_failure()
-            logger.warning(
-                f"[Poll #{self._stats.poll_count}] Failed "
-                f"({failure_tracker._consecutive_failures}/{failure_tracker.max_failures})"
-            )
-            return False
+            except Exception as e:
+                consecutive_failures += 1
+                self._stats.record_poll_failure()
+                logger.error(f"Poll error: {e}")
 
-        failure_tracker.record_success()
+            if consecutive_failures >= max_failures:
+                logger.warning("Too many consecutive failures, refreshing session...")
+                await session.refresh_session()
+                consecutive_failures = 0
 
-        record = RouteRecord(
-            timestamp=timestamp,
-            poll_number=self._stats.poll_count,
-            routes=routes if isinstance(routes, list) else [routes],
-        )
+            await asyncio.sleep(self.config.api.poll_interval)
 
-        writer.write_route_record(record)
-        logger.info(
-            f"[Poll #{self._stats.poll_count}] Fetched {record.route_count} routes"
-        )
-        return True
+    async def _flush_positions_loop(
+        self, queue: ConcurrentFileQueue, writer: StreamWriter
+    ) -> None:
+        while self._running:
+            await asyncio.sleep(self.config.websocket.flush_interval)
 
-    def _handle_refresh(
-        self,
-        session: CookieSession,
-        ws_client: WebSocketClient | None,
-        failure_tracker: FailureTracker,
-    ) -> bool:
-        logger.info("Too many failures, refreshing cookies...")
+            positions = await queue.flush()
+            if not positions:
+                continue
 
-        if not session.refresh_cookies():
-            logger.error("Cookie refresh failed")
-            time.sleep(60)
-            return False
+            try:
+                await writer.write_positions([p.to_dict() for p in positions])
+                await queue.confirm_flush()
+                self._stats.record_position_flush(len(positions))
 
-        if ws_client:
-            ws_client.update_cookies(session.cookies, session.user_agent)
-            logger.info("WebSocket client cookies updated")
+                logger.info(
+                    f"[WS #{self._stats.ws_flush_count}] Flushed {len(positions)} positions "
+                    f"(total: {self._stats.total_positions})"
+                )
+            except Exception as e:
+                logger.error(f"Failed to write positions: {e}")
 
-        failure_tracker.reset()
-        return True
+    async def _stats_loop(
+        self, queue: ConcurrentFileQueue, dedup: DeduplicationFilter
+    ) -> None:
+        while self._running:
+            await asyncio.sleep(self.config.stats.log_interval)
 
-    def _run_loop(
-        self,
-        session: CookieSession,
-        writer: StreamWriter,
-        ws_client: WebSocketClient | None,
-    ) -> int:
-        timing = TimingController(
-            poll_interval=self.config.api.poll_interval,
-            flush_interval=self.config.websocket.flush_interval,
-        )
-        failure_tracker = FailureTracker(self.config.api.max_consecutive_failures)
-
-        logger.info("Starting polling loop...")
-
-        try:
-            while self._running:
-                if self.config.websocket.enabled and timing.should_flush():
-                    self._flush_positions(writer)
-                    self._log_ws_stats(ws_client)
-                    timing.mark_flushed()
-
-                if timing.should_poll():
-                    if not self._poll_routes(session, writer, failure_tracker):
-                        if failure_tracker.should_refresh():
-                            self._handle_refresh(session, ws_client, failure_tracker)
-                    timing.mark_polled()
-
-                time.sleep(0.5)
-
-        except KeyboardInterrupt:
-            logger.info("Stopped by user")
+            uptime = round(time.monotonic() - self._start_time, 1)
             logger.info(
-                f"Final stats: {self._stats.poll_count} route polls, "
-                f"{self._stats.total_positions} positions"
+                f"Stats: polls={self._stats.poll_count} "
+                f"failed={self._stats.polls_failed} "
+                f"positions={self._stats.total_positions} "
+                f"flushes={self._stats.ws_flush_count} "
+                f"queue={queue.size} dedup={dedup.tracked_count} "
+                f"uptime={uptime}s"
             )
-            return 0
-
-        except Exception as e:
-            logger.exception(f"Poller error: {e}")
-            return 1
-
-        return 0
-
-    def _log_ws_stats(self, ws_client: WebSocketClient | None) -> None:
-        if ws_client and self._stats.ws_flush_count % 10 == 0:
-            stats = ws_client.stats
-            logger.debug(f"WS stats: {stats}")
 
     def stop(self) -> None:
         self._running = False
 
 
-@contextmanager
-def _session_context(poller: KPTPoller) -> Iterator[CookieSession]:
-    session = poller._create_session()
-    try:
-        yield session
-    finally:
-        session.close()
-
-
-@contextmanager
-def _writer_context(poller: KPTPoller) -> Iterator[StreamWriter]:
-    writer = poller._create_writer()
-    try:
-        yield writer
-    finally:
-        writer.close()
-
-
-def run_poller(config: PollerConfig) -> int:
+async def run_poller(config: PollerConfig) -> None:
     poller = KPTPoller(config)
-    return poller.run()
+
+    loop = asyncio.get_running_loop()
+
+    def _signal_handler() -> None:
+        logger.info("Received shutdown signal")
+        poller.stop()
+
+    for sig_name in ("SIGTERM", "SIGINT"):
+        sig = getattr(signal, sig_name, None)
+        if sig:
+            loop.add_signal_handler(sig, _signal_handler)
+
+    try:
+        await poller.run()
+    finally:
+        stats = poller._stats
+        logger.info(
+            f"Final: polls={stats.poll_count} failed={stats.polls_failed} "
+            f"positions={stats.total_positions} flushes={stats.ws_flush_count}"
+        )

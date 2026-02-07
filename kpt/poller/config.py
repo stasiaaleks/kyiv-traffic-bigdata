@@ -59,14 +59,34 @@ class WebSocketConfig:
 
 
 @dataclass(frozen=True, slots=True)
-class BrowserConfig:
-    user_data_dir: Path = field(
-        default_factory=lambda: get_env_path("KPT_USER_DATA_DIR", "/tmp/patchright_kpt")
+class ProxyConfig:
+    http_proxy: str = field(
+        default_factory=lambda: get_env("KPT_HTTP_PROXY", "")
     )
-    headless: bool = field(default_factory=lambda: get_env_bool("KPT_HEADLESS", False))
-    cloudflare_timeout: int = 120
-    page_load_timeout: int = 60000
-    turnstile_max_attempts: int = 3
+    socks_proxy: str = field(
+        default_factory=lambda: get_env("KPT_SOCKS_PROXY", "")
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class QueueConfig:
+    max_size: int = field(
+        default_factory=lambda: get_env_int("KPT_QUEUE_MAX_SIZE", 10000)
+    )
+    buffer_file: str = "ws_buffer.jsonl"
+
+
+@dataclass(frozen=True, slots=True)
+class RetryConfig:
+    base_delay: float = 5.0
+    max_delay: float = 300.0
+
+
+@dataclass(frozen=True, slots=True)
+class StatsConfig:
+    log_interval: int = field(
+        default_factory=lambda: get_env_int("KPT_STATS_LOG_INTERVAL", 60)
+    )
 
 
 @dataclass(frozen=True, slots=True)
@@ -88,7 +108,7 @@ class APIConfig:
 @dataclass(frozen=True, slots=True)
 class OutputConfig:
     output_dir: Path = field(
-        default_factory=lambda: get_env_path("KPT_OUTPUT_DIR", "/app/data")
+        default_factory=lambda: get_env_path("KPT_OUTPUT_DIR", "./data")
     )
     routes_file_prefix: str = "kpt_routes"
     positions_file_prefix: str = "kpt_positions"
@@ -99,7 +119,10 @@ class OutputConfig:
 class PollerConfig:
     api: APIConfig = field(default_factory=APIConfig)
     websocket: WebSocketConfig = field(default_factory=WebSocketConfig)
-    browser: BrowserConfig = field(default_factory=BrowserConfig)
+    proxy: ProxyConfig = field(default_factory=ProxyConfig)
+    queue: QueueConfig = field(default_factory=QueueConfig)
+    retry: RetryConfig = field(default_factory=RetryConfig)
+    stats: StatsConfig = field(default_factory=StatsConfig)
     output: OutputConfig = field(default_factory=OutputConfig)
     bounds: KyivCoordinateBounds = field(default_factory=KyivCoordinateBounds)
 
@@ -112,5 +135,6 @@ class PollerConfig:
             "ws_flush_interval": self.websocket.flush_interval,
             "ws_enabled": self.websocket.enabled,
             "output_dir": str(self.output.output_dir),
-            "headless": self.browser.headless,
+            "http_proxy": "***" if self.proxy.http_proxy else "(none)",
+            "socks_proxy": "***" if self.proxy.socks_proxy else "(none)",
         }
